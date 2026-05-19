@@ -1,0 +1,4652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cartão Capital. Telemedicina 24h, 21 especialidades por agendamento, sem coparticipação. A partir de R$29,90/mês. Operado por Medicar.">
+    <meta name="theme-color" content="#6C009D">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cartão Capital | Telemedicina 24h sem coparticipação">
+    <meta property="og:description" content="Clínico geral 24h e 21 especialidades por agendamento. Sem taxa por consulta. A partir de R$29,90/mês.">
+    <meta property="og:image" content="og-cartao-capital.png">
+    <meta property="og:locale" content="pt_BR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cartão Capital | Telemedicina 24h sem coparticipação">
+    <meta name="twitter:description" content="Clínico geral 24h e 21 especialidades por agendamento. Sem taxa por consulta.">
+
+    <title>Cartão Capital | Telemedicina 24h sem coparticipação</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%236C009D' d='M16 3C8.82 3 3 8.82 3 16s5.82 13 13 13c4.05 0 7.66-1.85 10.04-4.75l-3.96-3.18A8 8 0 1 1 16 8c2.45 0 4.62 1.1 6.08 2.83l3.96-3.18A12.97 12.97 0 0 0 16 3z'/%3E%3Cpath fill='%23450068' d='M3 16c0 7.18 5.82 13 13 13 4.05 0 7.66-1.85 10.04-4.75l-3.96-3.18A8 8 0 0 1 8 16H3z'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           DESIGN SYSTEM | Light + Purple
+           ============================================ */
+        :root {
+            /* Backgrounds (light, estilo Nubank) */
+            --bg-primary: #F4F4F4;         /* cinza claro neutro */
+            --bg-secondary: #E9E3E0;       /* warm beige (estilo Nubank) */
+            --bg-tertiary: #F5F3FF;        /* lavanda muito leve (mantida pra accents roxo) */
+            --bg-card: #FFFFFF;            /* cards permanecem brancos pra contraste */
+
+            /* Brand Roxo (Cartão Capital) */
+            --purple-primary: #6C009D;
+            --purple-mid: #7900AF;
+            --purple-light: #A78BFA;
+            --purple-deep: #450068;
+            --purple-soft: #EDE9FE;        /* fundo accent muito claro */
+            --purple-softer: #F5F3FF;
+            --purple-glow: rgba(108, 0, 157, 0.12);
+            --purple-shadow: rgba(108, 0, 157, 0.18);
+
+            /* Dourado (premium accent, usado com moderação) */
+            --gold-primary: #B68D00;
+            --gold-soft: #FEF3C7;
+            --gold-deep: #92400E;
+
+            /* Alerta */
+            --red-soft: #DC2626;
+            --red-bg: #FEE2E2;
+
+            /* Texto */
+            --text-primary: #18181B;
+            --text-secondary: #52525B;
+            --text-muted: #71717A;
+            --text-faint: #A1A1AA;
+
+            /* Bordas */
+            --border: #E5E7EB;
+            --border-soft: #F1F0F4;
+            --border-strong: #D4D4D8;
+            --border-purple: rgba(108, 0, 157, 0.25);
+
+            /* Sombras */
+            --shadow-xs: 0 1px 2px rgba(24, 24, 27, 0.04);
+            --shadow-sm: 0 1px 3px rgba(24, 24, 27, 0.06), 0 1px 2px rgba(24, 24, 27, 0.03);
+            --shadow-md: 0 4px 16px rgba(108, 0, 157, 0.06), 0 2px 6px rgba(24, 24, 27, 0.04);
+            --shadow-lg: 0 12px 32px rgba(108, 0, 157, 0.10), 0 4px 12px rgba(24, 24, 27, 0.05);
+            --shadow-purple: 0 12px 32px rgba(108, 0, 157, 0.18);
+            --shadow-card: 0 1px 2px rgba(24, 24, 27, 0.04), 0 8px 24px rgba(108, 0, 157, 0.05);
+
+            /* Easing */
+            --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Container */
+            --container-max: 1200px;
+            --container-pad: clamp(20px, 5vw, 40px);
+        }
+
+        /* ============================================
+           RESET
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        img, svg {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: inherit;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ============================================
+           TIPOGRAFIA (mais leve, clean)
+           ============================================ */
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: clamp(36px, 5.4vw, 64px);
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: clamp(26px, 3.6vw, 42px);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: clamp(18px, 1.8vw, 22px);
+            line-height: 1.3;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        h4 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--purple-primary);
+            display: inline-block;
+        }
+
+        .lead {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(16px, 1.3vw, 19px);
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .small {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           LAYOUT BASE
+           ============================================ */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-pad);
+            position: relative;
+        }
+
+        section {
+            padding: clamp(72px, 10vw, 120px) 0;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-primary);
+        }
+
+        section.alt-bg {
+            background: var(--bg-secondary);
+        }
+
+        section.lavender-bg {
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--purple-softer) 50%, var(--bg-primary) 100%);
+        }
+
+        /* Orbs decorativos (muito mais sutis no light) */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .orb-purple {
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.45) 0%, transparent 70%);
+        }
+
+        .orb-gold {
+            background: radial-gradient(circle, rgba(254, 243, 199, 0.6) 0%, transparent 70%);
+        }
+
+        .container > * { position: relative; z-index: 1; }
+
+        /* ============================================
+           ANIMAÇÕES DE ENTRADA
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+            transition-delay: calc(var(--stagger, 0) * 90ms);
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+        }
+
+        /* ============================================
+           BOTÕES
+           ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.25s var(--ease-standard);
+            white-space: nowrap;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--purple-primary);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(108, 0, 157, 0.22);
+        }
+
+        .btn-primary:hover {
+            background: var(--purple-mid);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(108, 0, 157, 0.32);
+        }
+
+        .btn-secondary {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-strong);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--purple-primary);
+            color: var(--purple-primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-purple {
+            background: transparent;
+            border: 1.5px solid var(--purple-primary);
+            color: var(--purple-primary);
+        }
+
+        .btn-outline-purple:hover {
+            background: var(--purple-primary);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-purple-soft {
+            background: var(--purple-soft);
+            color: var(--purple-deep);
+        }
+
+        .btn-purple-soft:hover {
+            background: var(--purple-light);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 18px 40px;
+            font-size: 16px;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        .btn .icon, .btn .icon-wa {
+            width: 18px;
+            height: 18px;
+        }
+        .btn-large .icon-wa { width: 22px; height: 22px; }
+
+        /* ============================================
+           NAV
+           ============================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s var(--ease-standard), box-shadow 0.3s var(--ease-standard);
+        }
+
+        .nav.scrolled {
+            border-bottom-color: var(--border);
+            box-shadow: 0 1px 3px rgba(24, 24, 27, 0.04);
+        }
+
+        .nav-inner {
+            height: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-pad);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: inline-flex;
+            align-items: center;
+            height: 36px;
+            color: var(--text-primary);
+        }
+
+        .nav-logo img {
+            height: 100%;
+            width: auto;
+            display: block;
+        }
+
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.2s var(--ease-standard);
+        }
+
+        .nav-links a:hover {
+            color: var(--purple-primary);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--purple-primary);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 100px;
+            transition: all 0.25s var(--ease-standard);
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(108, 0, 157, 0.18);
+        }
+
+        .nav-cta:hover {
+            background: var(--purple-mid);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(108, 0, 157, 0.28);
+        }
+
+        .nav-cta .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .nav-toggle {
+            display: none;
+            color: var(--text-primary);
+        }
+
+        .nav-toggle .icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Mobile menu — escondido por padrão (bug fix) */
+        .nav-mobile {
+            display: none;
+        }
+
+        /* Ícone WhatsApp inline reutilizável */
+        .icon-wa {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            flex-shrink: 0;
+            fill: currentColor;
+        }
+        .nav-cta .icon-wa { width: 16px; height: 16px; }
+        .whatsapp-float .icon-wa { width: 28px; height: 28px; }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .nav-toggle { display: inline-flex; }
+            .nav-cta { display: none; }
+            .nav-mobile {
+                position: fixed;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid var(--border);
+                padding: 24px var(--container-pad);
+                display: none;
+                flex-direction: column;
+                gap: 20px;
+                z-index: 999;
+                box-shadow: var(--shadow-md);
+            }
+            .nav-mobile.active { display: flex; }
+            .nav-mobile a { color: var(--text-primary); font-size: 15px; font-weight: 500; }
+            .nav-mobile .nav-cta { display: inline-flex; align-self: flex-start; }
+        }
+
+        /* ============================================
+           HERO | Seção 01
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: clamp(96px, 13vh, 130px);
+            padding-bottom: clamp(48px, 7vh, 80px);
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--purple-softer) 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: clamp(40px, 6vw, 80px);
+            align-items: center;
+        }
+
+        .hero-text .eyebrow {
+            margin-bottom: 24px;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 24px;
+        }
+
+        .hero-text h1 .accent {
+            color: var(--purple-primary);
+            display: block;
+        }
+
+        .hero-text .lead {
+            max-width: 520px;
+            margin-bottom: 36px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 8px 18px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            flex-wrap: wrap;
+            box-shadow: var(--shadow-xs);
+        }
+
+        .trust-badge span { display: inline-flex; align-items: center; gap: 6px; }
+
+        /* Mockup do cartão 3D */
+        .card-mockup-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 560px;
+            perspective: 1400px;
+            overflow: visible;
+        }
+
+        .card-mockup-wrap::before {
+            content: '';
+            position: absolute;
+            width: 580px;
+            height: 580px;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.55) 0%, rgba(254, 243, 199, 0.25) 40%, transparent 70%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .card-mockup {
+            position: relative;
+            width: min(440px, 95%);
+            transform-style: preserve-3d;
+            animation: cardRotate 8s ease-in-out infinite;
+            z-index: 2;
+            filter:
+                drop-shadow(0 35px 50px rgba(69, 0, 104, 0.32))
+                drop-shadow(0 10px 18px rgba(76, 29, 149, 0.20));
+        }
+
+        .card-mockup img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+
+        /* ==== Floating proof badges (estilo glassmorphism) ==== */
+        .card-badge {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(14px) saturate(180%);
+            -webkit-backdrop-filter: blur(14px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 100px;
+            padding: 9px 18px 9px 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-primary);
+            box-shadow:
+                0 16px 40px -8px rgba(76, 29, 149, 0.25),
+                0 4px 12px rgba(24, 24, 27, 0.06);
+            white-space: nowrap;
+            z-index: 5;
+        }
+
+        .card-badge strong {
+            color: var(--purple-primary);
+            font-weight: 700;
+        }
+
+        .badge-mini-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-deep));
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(108, 0, 157, 0.30);
+        }
+
+        .badge-mini-icon .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .badge-tl {
+            top: 8%;
+            left: 0;
+            animation: floatBadge 3.6s ease-in-out infinite;
+        }
+
+        .badge-mr {
+            top: 48%;
+            right: -4%;
+            animation: floatBadge 4.2s ease-in-out infinite -1.4s;
+        }
+
+        .badge-bl {
+            bottom: 8%;
+            left: 4%;
+            animation: floatBadge 3.9s ease-in-out infinite -2.6s;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @media (max-width: 1100px) {
+            .card-mockup-wrap { min-height: 480px; }
+            .card-badge { font-size: 12px; padding: 8px 16px 8px 7px; }
+            .badge-mini-icon { width: 28px; height: 28px; }
+            .badge-mini-icon .icon { width: 14px; height: 14px; }
+        }
+
+        @media (max-width: 700px) {
+            .card-mockup-wrap { min-height: 380px; }
+            .badge-tl { top: 2%; left: 0; }
+            .badge-mr { right: -2%; top: 50%; }
+            .badge-bl { bottom: 2%; left: 0; }
+        }
+
+        @keyframes cardRotate {
+            0%, 100% { transform: rotateY(0deg) rotateX(2deg); }
+            25% { transform: rotateY(15deg) rotateX(-2deg); }
+            75% { transform: rotateY(-15deg) rotateX(4deg); }
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            color: #fff;
+            letter-spacing: 0.05em;
+        }
+
+        .card-tier {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            color: #FFD866;
+            letter-spacing: 0.15em;
+        }
+
+        .card-number {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: clamp(14px, 1.4vw, 16px);
+            color: #fff;
+            letter-spacing: 4px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-holder {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .card-holder-label {
+            font-size: 8px;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .card-holder-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            color: #fff;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .card-chip {
+            width: 36px;
+            height: 28px;
+            border-radius: 5px;
+            background: radial-gradient(ellipse at top left, #FFD866, #B68D00 60%, #8B6914);
+            position: relative;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+        }
+
+        .card-chip::before {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                min-height: auto;
+                padding-top: clamp(88px, 12vh, 110px);
+                padding-bottom: clamp(40px, 6vh, 64px);
+            }
+
+            .hero-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 22px;
+                align-items: stretch;
+            }
+            /* Achata o hero-text pra reordenar os filhos individualmente */
+            .hero-text { display: contents; }
+            .hero-text .eyebrow { order: 1; }
+            .hero-text h1 {
+                order: 2;
+                margin-bottom: 0;
+                font-size: clamp(30px, 8vw, 40px);
+                line-height: 1.1;
+            }
+            .hero-text .lead {
+                order: 3;
+                margin-bottom: 0;
+                max-width: none;
+                font-size: 15px;
+                line-height: 1.55;
+            }
+            .card-mockup-wrap { order: 4; min-height: 340px; }
+            .hero-text .hero-ctas { order: 5; margin-bottom: 0; width: 100%; }
+            /* Trust badge ocultado no mobile (desktop preservado) */
+            .hero-text .trust-badge { display: none; }
+
+            /* Mockup compacto no mobile */
+            .card-mockup { width: min(300px, 75%); }
+            .card-mockup-wrap::before {
+                width: 400px;
+                height: 400px;
+                filter: blur(60px);
+            }
+        }
+
+        /* Esconde os 3 mini-badges flutuantes no mobile pra hero ficar limpa */
+        @media (max-width: 700px) {
+            .card-badge { display: none; }
+        }
+
+        /* ============================================
+           BARRA DE PROVA | Seção 02
+           ============================================ */
+        .stats {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 56px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 25%;
+            right: -12px;
+            width: 1px;
+            height: 50%;
+            background: var(--border);
+        }
+
+        .stat-number {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: clamp(34px, 4.6vw, 52px);
+            color: var(--purple-primary);
+            line-height: 1;
+            letter-spacing: -0.025em;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            font-weight: 400;
+        }
+
+        @media (max-width: 700px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
+            .stat-item:nth-child(2)::after { display: none; }
+            .stat-item:not(:last-child)::after { display: none; }
+        }
+
+        /* ============================================
+           SECTION HEAD (genérico)
+           ============================================ */
+        .section-head {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 64px;
+        }
+
+        .section-head .eyebrow {
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-head h2 {
+            margin-bottom: 20px;
+        }
+
+        .section-head .lead {
+            margin: 0 auto;
+            max-width: 700px;
+        }
+
+        /* ============================================
+           CARD BASE
+           ============================================ */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.35s var(--ease-standard);
+            box-shadow: var(--shadow-card);
+        }
+
+        .card:hover {
+            border-color: var(--border-purple);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Icon wraps */
+        .icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .icon-wrap.icon-red { background: var(--red-bg); color: var(--red-soft); }
+        .icon-wrap.icon-purple { background: var(--purple-soft); color: var(--purple-primary); }
+        .icon-wrap.icon-gold { background: var(--gold-soft); color: var(--gold-primary); }
+        .icon-wrap.icon-purple-deep { background: var(--purple-primary); color: #fff; }
+
+        .icon-wrap .icon {
+            width: 26px;
+            height: 26px;
+        }
+
+        /* ============================================
+           PROBLEMA | Seção 03
+           ============================================ */
+        .problem .container { max-width: 1100px; }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 56px;
+        }
+
+        .problem-card h3 { margin-bottom: 12px; }
+
+        .problem-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.65;
+        }
+
+        .problem-closer {
+            text-align: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .problem-transition {
+            text-align: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: clamp(24px, 3vw, 32px);
+            color: var(--purple-primary);
+            letter-spacing: -0.015em;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 800px) {
+            .problem-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           SOLUÇÃO | Seção 04
+           ============================================ */
+        /* Layout institucional (2 colunas) */
+        .solution { text-align: left; }
+        .solution .container { max-width: 1180px; }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 6vw, 72px);
+            align-items: start;
+        }
+
+        .solution-text .eyebrow { display: block; margin-bottom: 16px; }
+        .solution-text h2 { margin-bottom: 24px; }
+        .solution-text .lead { margin-bottom: 18px; }
+        .solution-text .solution-paragraph {
+            color: var(--text-secondary);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .solution-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .feature-block {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 16px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.35s var(--ease-standard);
+        }
+
+        .feature-block:hover {
+            border-color: var(--border-purple);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-block .icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .feature-block .icon-wrap .icon {
+            width: 22px;
+            height: 22px;
+        }
+
+        .feature-block-text h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .feature-block-text p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.65;
+            font-weight: 400;
+        }
+
+        @media (max-width: 900px) {
+            .solution-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+            }
+            /* Achata solution-text pra reordenar (CTA vai pro fim) */
+            .solution-text { display: contents; }
+            .solution-text .eyebrow { order: 1; }
+            .solution-text h2 { order: 2; }
+            .solution-text .lead { order: 3; margin-bottom: 0; }
+            .solution-stack { order: 4; }
+            .solution-text .btn { order: 5; align-self: stretch; }
+        }
+
+        /* ============================================
+           MOBILE — CTAs padronizados (full-width, centralizados, maiores)
+           ============================================ */
+        @media (max-width: 700px) {
+            .hero-ctas .btn,
+            .solution-text .btn,
+            .compare-cta .btn,
+            .app-text .btn,
+            .b2b-pricing-cta .btn,
+            .final-cta-block .btn {
+                width: 100%;
+                padding: 16px 24px;
+                font-size: 15px;
+                justify-content: center;
+                white-space: normal;
+                line-height: 1.3;
+            }
+
+            .compare-cta { padding: 0 var(--container-pad); }
+        }
+
+        .price-anchor {
+            background: linear-gradient(135deg, var(--purple-soft), var(--bg-primary));
+            border: 1px solid var(--border-purple);
+            border-radius: 20px;
+            padding: 32px;
+            max-width: 540px;
+            margin: 40px auto;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .price-anchor .strike {
+            color: var(--text-muted);
+            text-decoration: line-through;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .price-anchor .highlight {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: clamp(20px, 2.4vw, 24px);
+            color: var(--purple-primary);
+            letter-spacing: -0.015em;
+        }
+
+        .quote-block {
+            border-left: 3px solid var(--purple-primary);
+            padding-left: 24px;
+            max-width: 700px;
+            margin: 48px auto 0;
+            text-align: left;
+        }
+
+        .quote-block p {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 500;
+            font-style: italic;
+            font-size: 21px;
+            color: var(--text-primary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Solution features (3 mini items horizontais) */
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+        }
+
+        .feature-item .icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            margin: 0;
+        }
+
+        .feature-item span {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 600px) {
+            .solution-features { grid-template-columns: 1fr; gap: 28px; }
+        }
+
+        /* ============================================
+           TABELA COMPARATIVA | Seção 05
+           ============================================ */
+        .compare-wrap {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding-top: 20px;
+        }
+
+        .compare-table {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px -12px rgba(69, 0, 104, 0.15), 0 4px 12px rgba(24, 24, 27, 0.04);
+            position: relative;
+        }
+
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1.6fr 1.2fr 1.2fr;
+            align-items: center;
+        }
+
+        .compare-row > * {
+            padding: 26px 28px;
+            font-size: 15px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .compare-row:last-child > * {
+            border-bottom: none;
+        }
+
+        .compare-row.header > * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: 30px 28px;
+        }
+
+        .compare-row.header .col-feature {
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        /* Header column "destacado" do Cartão Capital */
+        .compare-row.header .col-capital {
+            background: linear-gradient(180deg, var(--purple-mid) 0%, var(--purple-deep) 100%);
+            color: #fff;
+            position: relative;
+            text-align: center;
+            font-size: 17px;
+            padding: 30px 18px;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.10),
+                inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        /* Linha dourada elegante na base do header — sinaliza a coluna sem badge */
+        .compare-row.header .col-capital::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary) 25%, var(--gold-primary) 75%, transparent);
+            opacity: 0.85;
+        }
+
+        .compare-row.header .col-other {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .col-feature {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Coluna do Capital: gradient lavanda vertical sutil, bordas laterais finas */
+        .col-capital {
+            text-align: center;
+            background: linear-gradient(180deg, #FAF3FF 0%, #F0E1FF 100%);
+            border-left: 1px solid var(--border-purple);
+            border-right: 1px solid var(--border-purple);
+            color: var(--purple-deep);
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .col-capital strong {
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-deep));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            display: inline-block;
+            line-height: 1.2;
+        }
+
+        .col-other {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .compare-row:not(.header):nth-child(even) .col-feature,
+        .compare-row:not(.header):nth-child(even) .col-other {
+            background: #FAFAFC;
+        }
+
+        .compare-row:not(.header):hover .col-feature,
+        .compare-row:not(.header):hover .col-other {
+            background: #F8F4FF;
+            transition: background 0.3s var(--ease-standard);
+        }
+
+        /* Checks: círculo gradient roxo com glow suave */
+        .check-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-deep));
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 6px 14px rgba(108, 0, 157, 0.32),
+                inset 0 1px 0 rgba(255, 255, 255, 0.20);
+        }
+
+        /* X: outline tracejado, mais minimal, dá leitura de "ausência" */
+        .x-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1.5px dashed var(--border-strong);
+            color: var(--text-faint);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .check-icon .icon {
+            width: 16px;
+            height: 16px;
+            stroke-width: 3;
+        }
+
+        .x-icon .icon {
+            width: 14px;
+            height: 14px;
+            stroke-width: 2.2;
+        }
+
+        .compare-cta {
+            text-align: center;
+        }
+
+        @media (max-width: 800px) {
+            .compare-table {
+                overflow-x: auto;
+            }
+            .compare-row {
+                grid-template-columns: 1.6fr 1.2fr 1.2fr;
+                min-width: 580px;
+            }
+            .compare-row > * {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+        }
+
+        /* ============================================
+           ESPECIALIDADES (grid) | Seção 06
+           ============================================ */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .specialty-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 14px;
+            padding: 22px 20px;
+            box-shadow: var(--shadow-xs);
+            transition: all 0.3s var(--ease-standard);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .specialty-card:hover {
+            border-color: var(--border-purple);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .specialty-card .icon-wrap {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            margin: 0;
+        }
+
+        .specialty-card .icon-wrap .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .specialty-text h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 0 0 4px;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .specialty-text p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        @media (max-width: 480px) {
+            .specialties-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .specialty-card { padding: 18px 16px; gap: 12px; }
+        }
+
+        /* ============================================
+           PARA QUEM É | Seção 06 (legado, dormente)
+           ============================================ */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .audience-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all 0.35s var(--ease-standard);
+            box-shadow: var(--shadow-card);
+        }
+
+        .audience-card:hover {
+            border-color: var(--border-purple);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .audience-card .icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+        }
+
+        .audience-card .icon-wrap .icon {
+            width: 22px;
+            height: 22px;
+        }
+
+        .audience-card h3 { margin-bottom: 16px; }
+
+        .audience-quote {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 15px;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 16px;
+            border-left: 2px solid var(--border);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .audience-solution {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-primary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .audience-solution::before {
+            content: '→';
+            color: var(--purple-primary);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .audience-b2b {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-deep) 100%);
+            border: none;
+            border-radius: 24px;
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 40px;
+            align-items: center;
+            color: #fff;
+            box-shadow: var(--shadow-purple);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audience-b2b::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 50%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(254, 243, 199, 0.15), transparent 60%);
+            pointer-events: none;
+        }
+
+        .audience-b2b:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 48px rgba(69, 0, 104, 0.3);
+        }
+
+        .audience-b2b > * { position: relative; z-index: 1; }
+
+        .audience-b2b .b2b-text .eyebrow {
+            color: #FEF3C7;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .audience-b2b h3 {
+            font-size: clamp(22px, 2.4vw, 26px);
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .audience-b2b p {
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .b2b-side {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .b2b-side .btn {
+            background: #fff;
+            color: var(--purple-primary);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .b2b-side .btn:hover {
+            background: var(--gold-soft);
+            color: var(--gold-deep);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 800px) {
+            .audience-grid { grid-template-columns: 1fr; }
+            .audience-b2b { grid-template-columns: 1fr; padding: 36px; gap: 24px; }
+            .b2b-side { justify-content: flex-start; }
+        }
+
+        /* ============================================
+           APP MOCKUP | Seção 07
+           ============================================ */
+        .app-section {
+            background: var(--bg-secondary);
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 6vw, 80px);
+            align-items: center;
+        }
+
+        .phone-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+        }
+
+        .phone-wrap::before {
+            content: '';
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.4) 0%, transparent 70%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .phone {
+            position: relative;
+            width: 280px;
+            height: 580px;
+            background: #18181B;
+            border-radius: 40px;
+            border: 8px solid #0A0A0F;
+            padding: 0;
+            overflow: hidden;
+            box-shadow:
+                0 30px 80px rgba(69, 0, 104, 0.25),
+                0 8px 24px rgba(24, 24, 27, 0.15),
+                0 0 0 1px rgba(0, 0, 0, 0.05) inset;
+            animation: phoneFloat 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes phoneFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 24px;
+            background: #0A0A0F;
+            border-radius: 100px;
+            z-index: 10;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F5F3FF 100%);
+            display: flex;
+            flex-direction: column;
+            padding-top: 36px;
+        }
+
+        .phone-statusbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 24px 0;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .phone-statusbar .status-icons {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .signal-bar {
+            width: 4px;
+            background: var(--text-primary);
+            border-radius: 1px;
+            display: inline-block;
+        }
+
+        .battery {
+            width: 22px;
+            height: 11px;
+            border: 1px solid var(--text-primary);
+            border-radius: 3px;
+            position: relative;
+            padding: 1px;
+        }
+
+        .battery::after {
+            content: '';
+            position: absolute;
+            right: -3px;
+            top: 3px;
+            width: 2px;
+            height: 5px;
+            background: var(--text-primary);
+            border-radius: 0 1px 1px 0;
+        }
+
+        .battery-fill {
+            display: block;
+            height: 100%;
+            width: 70%;
+            background: var(--text-primary);
+            border-radius: 1px;
+        }
+
+        .phone-content {
+            flex: 1;
+            padding: 20px 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .phone-greeting {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .mini-card {
+            background: linear-gradient(135deg, #450068 0%, #6C009D 100%);
+            border: 1px solid rgba(254, 243, 199, 0.4);
+            border-radius: 12px;
+            padding: 14px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mini-card::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(254, 243, 199, 0.18), transparent 60%);
+        }
+
+        .mini-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 9px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mini-card-top span:last-child {
+            color: #FFD866;
+        }
+
+        .mini-card-num {
+            margin-top: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .specialty-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .specialty-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .specialty-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .specialty-name {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .specialty-meta {
+            font-size: 9px;
+            color: var(--text-muted);
+        }
+
+        .specialty-meta.live {
+            color: var(--purple-primary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+        }
+
+        .live-dot {
+            width: 5px;
+            height: 5px;
+            background: var(--purple-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 6px var(--purple-primary);
+            animation: pulse 1.4s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .specialty-action {
+            background: var(--purple-primary);
+            color: #fff;
+            font-size: 9px;
+            font-weight: 700;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            padding: 5px 10px;
+            border-radius: 100px;
+            white-space: nowrap;
+        }
+
+        .specialty-action.alt {
+            background: var(--purple-soft);
+            color: var(--purple-primary);
+            border: 1px solid var(--border-purple);
+        }
+
+        .app-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .app-features li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .app-features li .icon-wrap {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 0;
+            flex-shrink: 0;
+            border-radius: 12px;
+        }
+
+        .app-features li .icon-wrap .icon {
+            width: 22px;
+            height: 22px;
+        }
+
+        @media (max-width: 800px) {
+            .app-grid { grid-template-columns: 1fr; }
+            .phone-wrap { order: -1; min-height: 500px; }
+            .phone { transform: scale(0.9); }
+        }
+
+        /* ============================================
+           DIFERENCIAIS | Seção 08
+           ============================================ */
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .differential-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.35s var(--ease-standard);
+            box-shadow: var(--shadow-card);
+        }
+
+        .differential-card:hover {
+            border-color: var(--border-purple);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .differential-card .icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+        }
+
+        .differential-card h3 {
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .differential-card p {
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 1000px) {
+            .differentials-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .differentials-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           COMO FUNCIONA | Seção 09
+           ============================================ */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            position: relative;
+            margin-bottom: 48px;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 64px;
+            left: 16.66%;
+            right: 16.66%;
+            height: 2px;
+            background-image: linear-gradient(90deg, var(--purple-primary) 50%, transparent 50%);
+            background-size: 12px 2px;
+            background-repeat: repeat-x;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 20px;
+            padding: 36px 28px;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            transition: all 0.35s var(--ease-standard);
+            z-index: 1;
+            box-shadow: var(--shadow-card);
+        }
+
+        .step-card:hover {
+            border-color: var(--border-purple);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .step-bgnum {
+            position: absolute;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 110px;
+            color: var(--purple-soft);
+            line-height: 1;
+            top: -15px;
+            right: -8px;
+            z-index: 0;
+            user-select: none;
+        }
+
+        .step-card .icon-wrap {
+            position: relative;
+            z-index: 1;
+            margin: 0 auto 24px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+        }
+
+        .step-card h3 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .step-card p {
+            position: relative;
+            z-index: 1;
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .steps-closer {
+            text-align: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 800px) {
+            .steps-grid { grid-template-columns: 1fr; gap: 20px; }
+            .steps-grid::before { display: none; }
+        }
+
+        /* ============================================
+           PLANOS | Seção 10
+           ============================================ */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            align-items: stretch;
+            margin-bottom: 32px;
+        }
+
+        .plan-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.35s var(--ease-standard);
+            box-shadow: var(--shadow-card);
+        }
+
+        .plan-card:hover {
+            border-color: var(--border-purple);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .plan-elite { border-top: 4px solid var(--purple-primary); }
+
+        .plan-master {
+            background:
+                radial-gradient(ellipse at top right, rgba(254, 243, 199, 0.18) 0%, transparent 55%),
+                linear-gradient(180deg, var(--purple-primary) 0%, var(--purple-deep) 100%);
+            border: 1px solid var(--purple-primary);
+            box-shadow: 0 25px 60px -10px rgba(69, 0, 104, 0.45), 0 8px 20px rgba(69, 0, 104, 0.15);
+            transform: scale(1.04);
+            color: #fff;
+            position: relative;
+            /* sem overflow:hidden — pra badge poder flutuar acima */
+        }
+
+        .plan-master:hover {
+            transform: scale(1.04) translateY(-3px);
+            box-shadow: 0 30px 70px -10px rgba(69, 0, 104, 0.55), 0 10px 24px rgba(69, 0, 104, 0.20);
+        }
+
+        .plan-master > * { position: relative; z-index: 1; }
+
+        .plan-master .plan-name,
+        .plan-master .plan-desc,
+        .plan-master .plan-price .amount {
+            color: #fff;
+        }
+
+        .plan-master .plan-desc { color: rgba(255, 255, 255, 0.85); }
+        .plan-master .plan-divider { background: rgba(255, 255, 255, 0.18); }
+        .plan-master .plan-features li { color: #fff; }
+        .plan-master .plan-features li.disabled { color: rgba(255, 255, 255, 0.5); }
+        .plan-master .plan-features .feat-icon.check { color: #FFD866; }
+        .plan-master .plan-features .feat-icon.x { color: rgba(255, 255, 255, 0.4); }
+
+        .plan-badge {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            background: linear-gradient(135deg, #FFE082 0%, #F0C040 50%, #B68D00 100%);
+            color: var(--purple-deep);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            padding: 10px 22px;
+            border-radius: 100px;
+            letter-spacing: 0.14em;
+            white-space: nowrap;
+            z-index: 5;
+            box-shadow:
+                0 14px 28px -6px rgba(69, 0, 104, 0.45),
+                0 6px 12px rgba(0, 0, 0, 0.18),
+                inset 0 1.5px 0 rgba(255, 255, 255, 0.55),
+                inset 0 -1.5px 0 rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s var(--ease-standard);
+        }
+
+        .plan-master:hover .plan-badge {
+            transform: translateX(-50%) rotate(-2deg) translateY(-3px);
+        }
+
+        .plan-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .plan-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .plan-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .plan-price .amount {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 44px;
+            line-height: 1;
+            letter-spacing: -0.025em;
+            color: var(--text-primary);
+        }
+
+        .plan-elite .plan-price .amount { color: var(--purple-primary); }
+
+        .plan-price .period {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .plan-master .plan-price .period { color: rgba(255, 255, 255, 0.7); }
+
+        .plan-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0 0 24px;
+        }
+
+        .plan-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex: 1;
+        }
+
+        .plan-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .plan-features li.disabled {
+            color: var(--text-muted);
+        }
+
+        .plan-features .feat-icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+            width: 16px;
+            height: 16px;
+        }
+
+        .plan-features .feat-icon.check { color: var(--purple-primary); }
+        .plan-features .feat-icon.x { color: var(--text-faint); }
+
+        .plan-master .btn {
+            background: #fff;
+            color: var(--purple-primary);
+            font-weight: 700;
+        }
+
+        .plan-master .btn:hover {
+            background: #FFD866;
+            color: var(--purple-deep);
+        }
+
+        .plan-tagline {
+            margin-top: 16px;
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            font-size: 13px;
+            color: var(--purple-primary);
+            text-align: center;
+        }
+
+        .plan-master .plan-tagline { color: #FFD866; }
+
+        .plans-strip {
+            background: var(--bg-secondary);
+            border-radius: 100px;
+            padding: 18px 32px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 1000px) {
+            .plans-grid { grid-template-columns: 1fr; gap: 32px; }
+            .plan-master { transform: none; }
+            .plan-master:hover { transform: translateY(-3px); }
+        }
+
+        /* ============================================
+           LAZER + SAÚDE | Seção 11
+           ============================================ */
+        .leisure {
+            background: var(--bg-secondary);
+        }
+
+        .leisure-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 6vw, 80px);
+            align-items: center;
+        }
+
+        .leisure h2 { margin-bottom: 24px; }
+
+        .leisure p {
+            color: var(--text-secondary);
+            font-size: 17px;
+            font-weight: 400;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .partners-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+            list-style: none;
+        }
+
+        .partner-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-xs);
+        }
+
+        .leisure-statement {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--purple-primary);
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+
+        /* Foto do parque aquático com glow + badge flutuante */
+        .leisure-photo {
+            position: relative;
+            max-width: 580px;
+            margin: 0 auto;
+            padding-bottom: 28px; /* espaço pro badge sobressair na parte de baixo */
+        }
+
+        .leisure-glow {
+            position: absolute;
+            inset: -50px;
+            background:
+                radial-gradient(circle at 25% 30%, rgba(167, 139, 250, 0.45), transparent 55%),
+                radial-gradient(circle at 75% 75%, rgba(254, 243, 199, 0.40), transparent 55%);
+            filter: blur(50px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .photo-frame {
+            position: relative;
+            z-index: 1;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 16 / 11;
+            box-shadow:
+                0 30px 60px -20px rgba(69, 0, 104, 0.32),
+                0 12px 24px rgba(24, 24, 27, 0.08);
+            background: var(--bg-secondary);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-badge {
+            position: absolute;
+            bottom: 0;
+            left: -18px;
+            z-index: 3;
+            background: var(--bg-card);
+            padding: 14px 22px 14px 14px;
+            border-radius: 16px;
+            box-shadow:
+                0 18px 36px -10px rgba(69, 0, 104, 0.28),
+                0 4px 8px rgba(24, 24, 27, 0.06);
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            border: 1px solid var(--border-soft);
+        }
+
+        .badge-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-deep));
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 6px 14px rgba(69, 0, 104, 0.25);
+        }
+
+        .badge-icon .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .badge-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .badge-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            color: var(--purple-primary);
+            text-transform: uppercase;
+        }
+
+        .badge-value {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* CSS legado (.abstract-visual) — dormente */
+        .abstract-visual {
+            position: relative;
+            aspect-ratio: 1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .abstract-visual .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            mix-blend-mode: multiply;
+            animation: blobRotate 120s linear infinite;
+            transform-origin: center;
+        }
+
+        .blob-1 {
+            top: 0; left: 10%;
+            width: 60%; height: 60%;
+            background: radial-gradient(circle, var(--purple-light), transparent 70%);
+            opacity: 0.6;
+        }
+
+        .blob-2 {
+            bottom: 5%; right: 0;
+            width: 55%; height: 55%;
+            background: radial-gradient(circle, #FEF3C7, transparent 70%);
+            opacity: 0.7;
+            animation-direction: reverse;
+            animation-duration: 90s;
+        }
+
+        .blob-3 {
+            bottom: 20%; left: 5%;
+            width: 45%; height: 45%;
+            background: radial-gradient(circle, var(--purple-soft), transparent 70%);
+            opacity: 0.7;
+            animation-duration: 150s;
+        }
+
+        @keyframes blobRotate {
+            from { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+        }
+
+        @media (max-width: 800px) {
+            .leisure-grid { grid-template-columns: 1fr; }
+            .abstract-visual { max-width: 320px; }
+            .leisure-photo { max-width: 100%; margin-top: 16px; }
+            .photo-badge { left: 12px; padding: 12px 18px 12px 12px; }
+            .badge-icon { width: 38px; height: 38px; }
+            .badge-icon .icon { width: 18px; height: 18px; }
+        }
+
+        /* ============================================
+           PARA EMPRESAS (B2B) | Seção 11.5
+           ============================================ */
+        .b2b-section {
+            background: linear-gradient(180deg, var(--purple-softer) 0%, var(--bg-secondary) 100%);
+            position: relative;
+        }
+
+        /* Showcase combinado: foto à esquerda + bloco de pricing/CTA à direita
+           num único card editorial premium */
+        .b2b-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow:
+                0 30px 70px -15px rgba(76, 29, 149, 0.40),
+                0 12px 24px rgba(24, 24, 27, 0.06);
+            position: relative;
+        }
+
+        .b2b-showcase-photo {
+            position: relative;
+            min-height: 100%;
+            background: var(--bg-secondary);
+            overflow: hidden;
+        }
+
+        .b2b-showcase-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Overlay sutil roxo vinhetando a foto pra unir com o bloco roxo */
+        .b2b-showcase-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 55%, rgba(76, 29, 149, 0.22) 100%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 900px) {
+            .b2b-showcase { grid-template-columns: 1fr; }
+            .b2b-showcase-photo { aspect-ratio: 16 / 10; min-height: auto; }
+        }
+
+        .b2b-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 56px;
+        }
+
+        .b2b-benefit {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 16px;
+            padding: 28px 24px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.35s var(--ease-standard);
+        }
+
+        .b2b-benefit:hover {
+            border-color: var(--border-purple);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .b2b-benefit .icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .b2b-benefit h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .b2b-benefit p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.65;
+        }
+
+        /* Bloco roxo de pricing + CTA — agora coluna direita do .b2b-showcase */
+        .b2b-pricing-block {
+            background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-primary) 100%);
+            padding: clamp(40px, 5vw, 56px);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .b2b-pricing-block::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 50%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(254, 243, 199, 0.18), transparent 60%);
+            filter: blur(40px);
+            pointer-events: none;
+        }
+
+        .b2b-pricing-block::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 40%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.3), transparent 60%);
+            filter: blur(50px);
+            pointer-events: none;
+        }
+
+        .b2b-pricing-block > * { position: relative; z-index: 1; }
+
+        .b2b-label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #FFD866;
+            margin-bottom: 12px;
+        }
+
+        .b2b-amount-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+
+        .b2b-amount-row .amount {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: clamp(36px, 5vw, 52px);
+            color: #fff;
+            line-height: 1;
+            letter-spacing: -0.025em;
+        }
+
+        .b2b-amount-row .period {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .b2b-pricing-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 0;
+        }
+
+        .b2b-pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.92);
+            line-height: 1.4;
+        }
+
+        .b2b-pricing-features li::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(254, 243, 199, 0.15);
+            color: #FFD866;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FFD866' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 2px;
+        }
+
+        .b2b-pricing-cta h3 {
+            font-size: clamp(20px, 2.4vw, 26px);
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        .b2b-pricing-cta p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .b2b-pricing-cta .btn {
+            background: #fff;
+            color: var(--purple-primary);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20);
+            font-weight: 700;
+        }
+
+        .b2b-pricing-cta .btn:hover {
+            background: #FFE082;
+            color: var(--purple-deep);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1000px) {
+            .b2b-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 700px) {
+            .b2b-benefits-grid { grid-template-columns: 1fr; }
+            .b2b-pricing-block { padding: clamp(32px, 6vw, 48px); }
+        }
+
+        /* ============================================
+           DEPOIMENTOS | Seção 12
+           ============================================ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            transition: all 0.35s var(--ease-standard);
+            box-shadow: var(--shadow-card);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--border-purple);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 12px;
+            left: 24px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 80px;
+            color: var(--purple-soft);
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 17px;
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 32px 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-footer {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-deep));
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .testimonial-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .testimonial-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        .testimonial-info {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 800px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           PARCEIROS | Seção 13
+           ============================================ */
+        .partners-section {
+            background: var(--bg-secondary);
+            padding: 72px 0;
+        }
+
+        .partners-section .section-head { margin-bottom: 40px; }
+
+        .partners-section h2 {
+            font-size: clamp(22px, 2.4vw, 26px);
+            font-weight: 600;
+        }
+
+        .marquee {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .marquee::before, .marquee::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .marquee::before {
+            left: 0;
+            background: linear-gradient(90deg, var(--bg-secondary), transparent);
+        }
+
+        .marquee::after {
+            right: 0;
+            background: linear-gradient(-90deg, var(--bg-secondary), transparent);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-33.3333%); }
+        }
+
+        .marquee:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        .marquee-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 8px 22px 8px 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            white-space: nowrap;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow-xs);
+        }
+
+        /* Placeholder de logo — substituir por <img src="logo.png"> quando tiver as logos reais */
+        .marquee-logo {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--purple-soft);
+            color: var(--purple-primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px dashed var(--border-purple);
+            overflow: hidden;
+        }
+
+        .marquee-logo .icon {
+            width: 14px;
+            height: 14px;
+            opacity: 0.6;
+        }
+
+        /* Quando virar <img>, mantém as dimensões e o recorte circular */
+        .marquee-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        /* ============================================
+           FAQ | Seção 14
+           ============================================ */
+        .faq .container { max-width: 800px; }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: border-color 0.3s var(--ease-standard);
+            overflow: hidden;
+            box-shadow: var(--shadow-xs);
+        }
+
+        .faq-item.active {
+            border-color: var(--purple-primary);
+            box-shadow: 0 4px 12px rgba(108, 0, 157, 0.10);
+        }
+
+        .faq-header {
+            padding: 22px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            gap: 24px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-question {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .faq-toggle {
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--purple-primary);
+            transition: transform 0.3s var(--ease-standard);
+            flex-shrink: 0;
+        }
+
+        .faq-toggle .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s var(--ease-standard), padding 0.3s var(--ease-standard);
+            padding: 0 24px;
+        }
+
+        .faq-body p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding-bottom: 22px;
+        }
+
+        .faq-item.active .faq-body {
+            max-height: 400px;
+        }
+
+        /* ============================================
+           CTA FINAL | Seção 15
+           ============================================ */
+        .final-cta-block {
+            background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-primary) 50%, var(--purple-deep) 100%);
+            padding: clamp(60px, 9vw, 110px);
+            border-radius: 28px;
+            margin: 0 auto;
+            max-width: 1100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-purple);
+        }
+
+        .final-cta-block::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(254, 243, 199, 0.18), transparent 60%);
+            filter: blur(40px);
+            pointer-events: none;
+        }
+
+        .final-cta-block::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            right: -10%;
+            width: 50%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.25), transparent 60%);
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .final-cta-block > * { position: relative; z-index: 1; }
+
+        .final-cta-block h2 {
+            color: #fff;
+            margin-bottom: 24px;
+        }
+
+        .final-cta-block h2 .gold-line {
+            display: block;
+            color: #FEF3C7;
+        }
+
+        .final-cta-block p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.88);
+            max-width: 600px;
+            margin: 0 auto 36px;
+            line-height: 1.6;
+        }
+
+        .final-cta-block .btn {
+            background: #fff;
+            color: var(--purple-primary);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .final-cta-block .btn:hover {
+            background: #FEF3C7;
+            color: var(--purple-deep);
+            transform: translateY(-2px);
+        }
+
+        .final-cta-block .btn-large {
+            margin-bottom: 20px;
+        }
+
+        .final-cta-block .micro {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .final-segments {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .segment-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.35s var(--ease-standard);
+            box-shadow: var(--shadow-card);
+        }
+
+        .segment-card:hover {
+            border-color: var(--border-purple);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .segment-card .icon-wrap {
+            margin: 0 auto 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+        }
+
+        .segment-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .segment-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .segment-card a.segment-link {
+            color: var(--purple-primary);
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.25s var(--ease-standard);
+        }
+
+        .segment-card a.segment-link:hover {
+            gap: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .final-segments { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           RODAPÉ | Seção 16
+           ============================================ */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 64px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin: 16px 0 12px;
+            max-width: 320px;
+        }
+
+        .footer-brand .address {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-muted);
+            font-size: 14px;
+            transition: color 0.2s var(--ease-standard);
+        }
+
+        .footer-col a:hover {
+            color: var(--purple-primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            margin-top: 48px;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 800px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        /* ============================================
+           BOTÃO FLUTUANTE WHATSAPP (roxo, fiel à marca)
+           ============================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--purple-primary);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 8px 28px rgba(108, 0, 157, 0.35),
+                0 0 0 8px rgba(108, 0, 157, 0.08);
+            animation: pulseFloat 2.5s ease infinite;
+            transition: transform 0.3s var(--ease-standard), box-shadow 0.3s var(--ease-standard);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: var(--purple-mid);
+            box-shadow:
+                0 12px 40px rgba(108, 0, 157, 0.45),
+                0 0 0 12px rgba(108, 0, 157, 0.10);
+        }
+
+        @keyframes pulseFloat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .whatsapp-float .icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        @media (max-width: 600px) {
+            .whatsapp-float {
+                bottom: 16px;
+                right: 16px;
+                width: 56px;
+                height: 56px;
+            }
+            .whatsapp-float .icon {
+                width: 26px;
+                height: 26px;
+            }
+        }
+
+        /* ============================================
+           UTILS
+           ============================================ */
+        .text-purple { color: var(--purple-primary); }
+
+        ::selection {
+            background: var(--purple-primary);
+            color: #fff;
+        }
+
+        /* ============================================
+           MODAL PARQUES AQUÁTICOS
+           ============================================ */
+        .parques-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            color: var(--purple-primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: opacity 0.2s;
+            font-family: inherit;
+        }
+        .parques-link:hover { opacity: 0.7; }
+        .parques-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+        /* Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.82);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .modal-overlay.open { display: flex; }
+
+        /* Box */
+        .modal-box {
+            position: relative;
+            background: #fff;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 700px;
+            overflow: hidden;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+            animation: modalIn 0.28s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        @keyframes modalIn {
+            from { transform: scale(0.88); opacity: 0; }
+            to   { transform: scale(1);    opacity: 1; }
+        }
+
+        /* Header */
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .modal-header h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        .modal-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s, color 0.2s;
+        }
+        .modal-close:hover { background: #f4f4f4; color: var(--text-primary); }
+        .modal-close svg { width: 20px; height: 20px; }
+
+        /* Carrossel */
+        .carousel-wrap {
+            position: relative;
+            background: #0a0a0a;
+            overflow: hidden;
+            max-height: 80vh;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Setas */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            z-index: 10;
+        }
+        .carousel-btn:hover { background: rgba(255,255,255,0.28); }
+        .carousel-btn.prev { left: 12px; }
+        .carousel-btn.next { right: 12px; }
+        .carousel-btn svg { width: 20px; height: 20px; }
+
+        /* Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 20px 18px;
+            background: #fff;
+        }
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ddd;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            padding: 0;
+        }
+        .carousel-dot.active {
+            background: var(--purple-primary);
+            transform: scale(1.3);
+        }
+
+        /* Contador */
+        .carousel-counter {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 100px;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        @media (max-width: 600px) {
+            .modal-box { border-radius: 16px; }
+            .carousel-btn { width: 36px; height: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         SVG SYMBOLS (ícones inline reutilizáveis)
+         ============================================ -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </symbol>
+    </svg>
+
+    <!-- ============================================
+         NAV
+         ============================================ -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo" aria-label="Cartão Capital, ir para o início">
+                <img src="logo-capital-dark.svg" alt="Cartão Capital">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#planos">Planos</a></li>
+                <li><a href="#como-funciona">Como Funciona</a></li>
+                <li><a href="#empresas">Empresas</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+
+            <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="nav-cta" target="_blank" rel="noopener">
+                <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+                Contratar plano
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+                <i data-lucide="menu" class="icon"></i>
+            </button>
+        </div>
+
+        <div class="nav-mobile" id="navMobile">
+            <a href="#planos">Planos</a>
+            <a href="#como-funciona">Como Funciona</a>
+            <a href="#empresas">Empresas</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="nav-cta" target="_blank" rel="noopener">
+                <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+                Contratar plano
+            </a>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         01 | HERO
+         ============================================ -->
+    <section class="hero" id="hero">
+        <div class="orb orb-purple" style="width: 700px; height: 700px; top: -200px; left: -200px;"></div>
+        <div class="orb orb-gold" style="width: 500px; height: 500px; bottom: -150px; right: -100px; opacity: 0.3;"></div>
+
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <span class="eyebrow reveal">TELEMEDICINA + SAÚDE + LAZER</span>
+                    <h1 class="reveal" style="--stagger: 1;">
+                        Saúde Digital com Telemedicina
+                        <span class="accent">que não cobra por consulta.</span>
+                    </h1>
+                    <p class="lead reveal" style="--stagger: 2;">
+                        Pague a mensalidade e tenha clínico geral 24h + 21 especialidades por agendamento. Quantas vezes precisar, sem taxa extra. De qualquer lugar do Brasil.
+                    </p>
+                    <div class="hero-ctas reveal" style="--stagger: 3;">
+                        <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary" target="_blank" rel="noopener">
+                            <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+                            Contratar plano
+                        </a>
+                    </div>
+                    <div class="trust-badge reveal" style="--stagger: 4;">
+                        <span><i data-lucide="check" style="width: 14px; height: 14px; color: var(--purple-primary);"></i> Operado por Medicar</span>
+                        <span><i data-lucide="check" style="width: 14px; height: 14px; color: var(--purple-primary);"></i> Adesão em até 48h</span>
+                        <span><i data-lucide="check" style="width: 14px; height: 14px; color: var(--purple-primary);"></i> Cancele quando quiser*</span>
+                    </div>
+                </div>
+
+                <div class="card-mockup-wrap reveal" style="--stagger: 2;">
+                    <div class="card-mockup">
+                        <img src="cartoes-mockup.png" alt="Cartão Capital — planos Essencial e Master" loading="eager">
+                    </div>
+
+                    <!-- Floating proof badges (glassmorphic) -->
+                    <div class="card-badge badge-tl">
+                        <div class="badge-mini-icon"><i data-lucide="smartphone" class="icon"></i></div>
+                        <span>Carteirinha <strong>100% digital</strong></span>
+                    </div>
+
+                    <div class="card-badge badge-mr">
+                        <div class="badge-mini-icon"><i data-lucide="stethoscope" class="icon"></i></div>
+                        <span><strong>+ de 20</strong> especialidades</span>
+                    </div>
+
+                    <div class="card-badge badge-bl">
+                        <div class="badge-mini-icon"><i data-lucide="heart-handshake" class="icon"></i></div>
+                        <span><strong>Família toda</strong> inclusa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         02 | BARRA DE PROVA (segunda dobra)
+         ============================================ -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="24" data-suffix="h">0h</div>
+                    <div class="stat-label">Clínico geral disponível</div>
+                </div>
+                <div class="stat-item reveal" style="--stagger: 1;">
+                    <div class="stat-number" data-target="21" data-suffix="">0</div>
+                    <div class="stat-label">Especialidades inclusas</div>
+                </div>
+                <div class="stat-item reveal" style="--stagger: 2;">
+                    <div class="stat-number">ZERO</div>
+                    <div class="stat-label">de Coparticipação</div>
+                </div>
+                <div class="stat-item reveal" style="--stagger: 3;">
+                    <div class="stat-number" data-target="48" data-suffix="h">0h</div>
+                    <div class="stat-label">Pra ativar e usar</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         03 | CONHEÇA O CARTÃO CAPITAL (institucional)
+         ============================================ -->
+    <section class="solution">
+        <div class="orb orb-purple" style="width: 500px; height: 500px; top: 10%; right: -180px; opacity: 0.16;"></div>
+
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-text">
+                    <span class="eyebrow reveal">CONHEÇA O CARTÃO CAPITAL</span>
+                    <h2 class="reveal" style="--stagger: 1;">Mais que um cartão. Um sistema de saúde acessível.</h2>
+                    <p class="reveal lead" style="--stagger: 2;">O Cartão Capital nasceu pra resolver um problema simples: dar acesso a médicos de qualidade sem fila do SUS, sem mensalidade impagável de plano de saúde e sem coparticipação por consulta.</p>
+                    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary reveal" style="--stagger: 3;" target="_blank" rel="noopener">
+                        <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+                        Contratar plano
+                    </a>
+                </div>
+
+                <div class="solution-stack">
+                    <div class="feature-block reveal">
+                        <div class="icon-wrap icon-purple"><i data-lucide="video" class="icon"></i></div>
+                        <div class="feature-block-text">
+                            <h3>Saúde digital</h3>
+                            <p>Telemedicina 24h pela plataforma, com clínico geral disponível a qualquer hora.</p>
+                        </div>
+                    </div>
+                    <div class="feature-block reveal" style="--stagger: 1;">
+                        <div class="icon-wrap icon-purple"><i data-lucide="hospital" class="icon"></i></div>
+                        <div class="feature-block-text">
+                            <h3>Saúde presencial</h3>
+                            <p>Rede credenciada de hospitais, clínicas e laboratórios com desconto de 20% a 70%.</p>
+                        </div>
+                    </div>
+                    <div class="feature-block reveal" style="--stagger: 2;">
+                        <div class="icon-wrap icon-purple"><i data-lucide="tree-palm" class="icon"></i></div>
+                        <div class="feature-block-text">
+                            <h3>Lazer e bem-estar</h3>
+                            <p>Clubes, parques e atividades pra toda a família, inclusos no plano Elite.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         04 | TABELA COMPARATIVA
+         ============================================ -->
+    <section class="alt-bg">
+        <div class="orb orb-purple" style="width: 500px; height: 500px; top: 20%; right: -150px; opacity: 0.18;"></div>
+
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow reveal">COMPARE COM A CONCORRÊNCIA</span>
+                <h2 class="reveal" style="--stagger: 1;">Mais especialidades. Mais benefícios. Mais valor.</h2>
+                <p class="lead reveal" style="--stagger: 2;">Veja tudo que está incluso no Cartão Capital e o que normalmente fica de fora nos cartões populares do mercado.</p>
+            </div>
+
+            <div class="compare-wrap reveal">
+                <div class="compare-table">
+                    <div class="compare-row header">
+                        <div class="col-feature">Recurso</div>
+                        <div class="col-capital">Cartão Capital</div>
+                        <div class="col-other">Concorrência</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="col-feature">Especialidades médicas</div>
+                        <div class="col-capital"><strong>+ de 20</strong></div>
+                        <div class="col-other">5 a 10</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="col-feature">Lazer (parques aquáticos e clubes)</div>
+                        <div class="col-capital"><span class="check-icon"><i data-lucide="check" class="icon"></i></span></div>
+                        <div class="col-other"><span class="x-icon"><i data-lucide="x" class="icon"></i></span></div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="col-feature">Clínico geral disponível</div>
+                        <div class="col-capital"><strong>24h, todos os dias</strong></div>
+                        <div class="col-other">Horário comercial</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="col-feature">Coparticipação por consulta</div>
+                        <div class="col-capital"><strong>R$ 0</strong></div>
+                        <div class="col-other">R$ 30 a R$ 50</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="col-feature">Acesso direto ao especialista</div>
+                        <div class="col-capital"><span class="check-icon"><i data-lucide="check" class="icon"></i></span></div>
+                        <div class="col-other"><span class="x-icon"><i data-lucide="x" class="icon"></i></span></div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="col-feature">Rede credenciada presencial</div>
+                        <div class="col-capital"><span class="check-icon"><i data-lucide="check" class="icon"></i></span></div>
+                        <div class="col-other">Limitada</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="col-feature">Adesão do plano</div>
+                        <div class="col-capital"><strong>Em até 48h</strong></div>
+                        <div class="col-other">Vários dias úteis</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="col-feature">App próprio com carteirinha digital</div>
+                        <div class="col-capital"><span class="check-icon"><i data-lucide="check" class="icon"></i></span></div>
+                        <div class="col-other">Limitado</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compare-cta reveal">
+                <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary" target="_blank" rel="noopener">
+                    <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+                    Contratar plano sem coparticipação
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         05 | DIFERENCIAIS (POR QUE A GENTE É DIFERENTE)
+         ============================================ -->
+    <section id="diferenciais">
+        <div class="orb orb-purple" style="width: 600px; height: 600px; top: 30%; right: -200px; opacity: 0.18;"></div>
+
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow reveal">POR QUE A GENTE É DIFERENTE</span>
+                <h2 class="reveal" style="--stagger: 1;">Não somos mais um cartão de saúde. Somos o que os outros deveriam ser.</h2>
+            </div>
+
+            <div class="differentials-grid">
+                <div class="differential-card reveal">
+                    <div class="icon-wrap icon-purple"><i data-lucide="ban" class="icon"></i></div>
+                    <h3>ZERO coparticipação</h3>
+                    <p>Outros cobram R$30 a R$50 por consulta além da mensalidade. Aqui, pagou a mensalidade e acabou.</p>
+                </div>
+                <div class="differential-card reveal" style="--stagger: 1;">
+                    <div class="icon-wrap icon-purple"><i data-lucide="stethoscope" class="icon"></i></div>
+                    <h3>21 especialidades</h3>
+                    <p>Clínico geral 24h. Pediatra, cardiologista, geriatra, psicólogo e mais 15 por agendamento.</p>
+                </div>
+                <div class="differential-card reveal" style="--stagger: 2;">
+                    <div class="icon-wrap icon-purple"><i data-lucide="zap" class="icon"></i></div>
+                    <h3>Acesso direto ao especialista</h3>
+                    <p>Quer falar com o cardiologista? Fala. Sem triagem burocrática bloqueando seu acesso.</p>
+                </div>
+                <div class="differential-card reveal">
+                    <div class="icon-wrap icon-purple"><i data-lucide="brain" class="icon"></i></div>
+                    <h3>Psicologia e nutrição: 2x/mês</h3>
+                    <p>O mercado dá 1 sessão. A gente dá 2: primeira consulta + retorno.</p>
+                </div>
+                <div class="differential-card reveal" style="--stagger: 1;">
+                    <div class="icon-wrap icon-purple"><i data-lucide="rocket" class="icon"></i></div>
+                    <h3>Adesão em até 48h</h3>
+                    <p>Pagou, em até 48 horas você já tem plataforma, carteirinha digital e médico disponível.</p>
+                </div>
+                <div class="differential-card reveal" style="--stagger: 2;">
+                    <div class="icon-wrap icon-purple"><i data-lucide="heart-pulse" class="icon"></i></div>
+                    <h3>Triagem humanizada</h3>
+                    <p>Enfermeira faz a triagem antes do médico. Você chega organizado, sem perder tempo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         06 | ESPECIALIDADES (carrossel)
+         ============================================ -->
+    <section class="alt-bg specialties-section" id="especialidades">
+        <div class="orb orb-purple" style="width: 500px; height: 500px; top: 10%; left: -150px; opacity: 0.22;"></div>
+
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow reveal">ESPECIALIDADES INCLUSAS</span>
+                <h2 class="reveal" style="--stagger: 1;">Toda a sua saúde, em um só lugar.</h2>
+                <p class="lead reveal" style="--stagger: 2;">Do clínico geral às especialidades por agendamento, você encontra atendimento pra praticamente qualquer necessidade. Sem fila, sem coparticipação.</p>
+            </div>
+
+            <div class="specialties-grid reveal">
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="stethoscope" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Clínico Geral</h3>
+                        <p>Atendimento 24h para sintomas gerais e orientações</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="baby" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Pediatria</h3>
+                        <p>Cuidado para crianças e adolescentes</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="heart-pulse" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Cardiologia</h3>
+                        <p>Pressão, coração e prevenção cardiovascular</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="users" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Geriatria</h3>
+                        <p>Atendimento dedicado a idosos</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="flower-2" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Ginecologia</h3>
+                        <p>Saúde íntima e check-ups femininos</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="brain" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Psicologia</h3>
+                        <p>Apoio para ansiedade e bem-estar</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="pill" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Psiquiatria</h3>
+                        <p>Tratamento de transtornos mentais</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="salad" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Nutrição</h3>
+                        <p>Plano alimentar e reeducação</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="zap" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Neurologia</h3>
+                        <p>Enxaqueca, dores de cabeça e sistema nervoso</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="droplet" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Endocrinologia</h3>
+                        <p>Diabetes, tireoide e hormônios</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="sparkles" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Dermatologia</h3>
+                        <p>Pele, alergias e queda de cabelo</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="bone" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Ortopedia</h3>
+                        <p>Dores nas costas, lesões e articulações</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="eye" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Oftalmologia</h3>
+                        <p>Visão, dores oculares e óculos</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="ear" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Otorrinolaringologia</h3>
+                        <p>Ouvido, nariz e garganta</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="droplets" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Urologia</h3>
+                        <p>Saúde urológica e próstata</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="wind" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Pneumologia</h3>
+                        <p>Asma, bronquite e respiração</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="accessibility" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Reumatologia</h3>
+                        <p>Artrite, fibromialgia e dores articulares</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="utensils" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Gastroenterologia</h3>
+                        <p>Refluxo, gastrite e digestão</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="heart-handshake" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Mastologia</h3>
+                        <p>Saúde das mamas e prevenção</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="shield-alert" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Infectologia</h3>
+                        <p>IST e infecções recorrentes</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="leaf" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Alergologia</h3>
+                        <p>Rinite, alergias e dermatites</p>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         07 | APP MOCKUP
+         ============================================ -->
+    <section class="app-section">
+        <div class="orb orb-purple" style="width: 600px; height: 600px; top: 0; left: -200px; opacity: 0.25;"></div>
+
+        <div class="container">
+            <div class="app-grid">
+                <div class="phone-wrap reveal">
+                    <div class="phone">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="phone-statusbar">
+                                <span>12:30</span>
+                                <div class="status-icons">
+                                    <span class="signal-bar" style="height: 4px;"></span>
+                                    <span class="signal-bar" style="height: 6px;"></span>
+                                    <span class="signal-bar" style="height: 8px;"></span>
+                                    <span class="signal-bar" style="height: 10px;"></span>
+                                    <div class="battery"><span class="battery-fill"></span></div>
+                                </div>
+                            </div>
+                            <div class="phone-content">
+                                <div class="phone-greeting">Olá 👋</div>
+
+                                <div class="mini-card">
+                                    <div class="mini-card-top">
+                                        <span>CARTÃO CAPITAL</span>
+                                        <span>ELITE</span>
+                                    </div>
+                                    <div class="mini-card-num">•••• •••• •••• 4242</div>
+                                </div>
+
+                                <div class="specialty-list">
+                                    <div class="specialty-item">
+                                        <div class="specialty-info">
+                                            <div class="specialty-name">Clínico Geral</div>
+                                            <div class="specialty-meta live"><span class="live-dot"></span> Disponível agora</div>
+                                        </div>
+                                        <span class="specialty-action">Iniciar</span>
+                                    </div>
+                                    <div class="specialty-item">
+                                        <div class="specialty-info">
+                                            <div class="specialty-name">Pediatria</div>
+                                            <div class="specialty-meta">Hoje, 14:30</div>
+                                        </div>
+                                        <span class="specialty-action alt">Agendar</span>
+                                    </div>
+                                    <div class="specialty-item">
+                                        <div class="specialty-info">
+                                            <div class="specialty-name">Cardiologia</div>
+                                            <div class="specialty-meta">Amanhã, 09:00</div>
+                                        </div>
+                                        <span class="specialty-action alt">Agendar</span>
+                                    </div>
+                                    <div class="specialty-item">
+                                        <div class="specialty-info">
+                                            <div class="specialty-name">Psicologia</div>
+                                            <div class="specialty-meta">2 sessões disponíveis</div>
+                                        </div>
+                                        <span class="specialty-action alt">Agendar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-text">
+                    <span class="eyebrow reveal">TUDO NA PALMA DA SUA MÃO</span>
+                    <h2 class="reveal" style="--stagger: 1; margin: 16px 0 24px;">Sua saúde, em 1 clique.</h2>
+
+                    <ul class="app-features reveal" style="--stagger: 2;">
+                        <li>
+                            <div class="icon-wrap icon-purple"><i data-lucide="smartphone" class="icon"></i></div>
+                            Carteirinha digital sempre disponível
+                        </li>
+                        <li>
+                            <div class="icon-wrap icon-purple"><i data-lucide="video" class="icon"></i></div>
+                            Consultas por vídeo de qualquer lugar
+                        </li>
+                        <li>
+                            <div class="icon-wrap icon-purple"><i data-lucide="calendar-check" class="icon"></i></div>
+                            Agendamento direto pela plataforma
+                        </li>
+                        <li>
+                            <div class="icon-wrap icon-purple"><i data-lucide="bell" class="icon"></i></div>
+                            Lembretes e prescrições digitais
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary reveal" style="--stagger: 3;" target="_blank" rel="noopener">
+                        <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+                        Contratar plano
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         09 | COMO FUNCIONA
+         ============================================ -->
+    <section class="alt-bg" id="como-funciona">
+        <div class="orb orb-purple" style="width: 500px; height: 500px; top: 20%; left: -150px; opacity: 0.2;"></div>
+
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow reveal">SIMPLES ASSIM</span>
+                <h2 class="reveal" style="--stagger: 1;">Do pagamento ao médico em 3 passos.</h2>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card reveal">
+                    <span class="step-bgnum">1</span>
+                    <div class="icon-wrap icon-purple"><i data-lucide="mouse-pointer-2" class="icon"></i></div>
+                    <h3>Escolha seu plano</h3>
+                    <p>Essencial, Master ou Elite. Pra você ou pra família inteira.</p>
+                </div>
+                <div class="step-card reveal" style="--stagger: 1;">
+                    <span class="step-bgnum">2</span>
+                    <div class="icon-wrap icon-purple"><i data-lucide="check-circle" class="icon"></i></div>
+                    <h3>Adesão em até 48h</h3>
+                    <p>Em até 48 horas você recebe a plataforma, a carteirinha digital e as instruções pelo WhatsApp.</p>
+                </div>
+                <div class="step-card reveal" style="--stagger: 2;">
+                    <span class="step-bgnum">3</span>
+                    <div class="icon-wrap icon-purple"><i data-lucide="stethoscope" class="icon"></i></div>
+                    <h3>Use quando precisar</h3>
+                    <p>Clínico geral 24h, todos os dias. Demais especialidades por agendamento direto na plataforma.</p>
+                </div>
+            </div>
+
+            <p class="steps-closer reveal">Sem burocracia. Sem carência na telemedicina. Sem letra miúda.</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         10 | LAZER + SAÚDE
+         ============================================ -->
+    <section class="leisure">
+        <div class="container">
+            <div class="leisure-grid">
+                <div class="leisure-text">
+                    <span class="eyebrow reveal">SAÚDE É MAIS DO QUE NÃO ESTAR DOENTE</span>
+                    <h2 class="reveal" style="--stagger: 1; margin-top: 16px;">O único cartão de saúde que você usa mesmo quando tá bem.</h2>
+                    <p class="reveal" style="--stagger: 2;">Além da cobertura médica, o Elite dá acesso a clubes aquáticos, parques e centros de lazer pra toda a família.</p>
+
+                    <ul class="partners-list reveal" style="--stagger: 3;">
+                        <li><span class="partner-pill">🌴 Parques aquáticos</span></li>
+                        <li><span class="partner-pill">♨️ Resorts e termas</span></li>
+                        <li><span class="partner-pill">🎬 Cinemark</span></li>
+                        <li><span class="partner-pill">🎢 Parques de diversões</span></li>
+                    </ul>
+
+                    <button class="parques-link reveal" style="--stagger: 3;" onclick="abrirModalParques()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        Ver parques credenciados
+                    </button>
+
+                    <p class="leisure-statement reveal" style="--stagger: 4;">Quem tem saúde tem tudo. Quem tem saúde e lazer, usa o cartão toda semana.</p>
+                </div>
+
+                <div class="leisure-photo reveal">
+                    <div class="leisure-glow" aria-hidden="true"></div>
+                    <div class="photo-frame">
+                        <img src="parque-aquatico.png" alt="Família multigeracional aproveitando o parque aquático parceiro do Cartão Capital" loading="lazy">
+                    </div>
+                    <div class="photo-badge">
+                        <div class="badge-icon"><i data-lucide="tree-palm" class="icon"></i></div>
+                        <div class="badge-content">
+                            <span class="badge-label">PLANO ELITE</span>
+                            <span class="badge-value">Lazer pra família toda</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         11 | PLANOS
+         ============================================ -->
+    <section id="planos">
+        <div class="orb orb-purple" style="width: 600px; height: 600px; top: 30%; right: -200px; opacity: 0.18;"></div>
+        <div class="orb orb-gold" style="width: 500px; height: 500px; bottom: 10%; left: -150px; opacity: 0.2;"></div>
+
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow reveal">PLANOS</span>
+                <h2 class="reveal" style="--stagger: 1;">Saúde de verdade cabe no seu bolso.</h2>
+                <p class="lead reveal" style="--stagger: 2;">Todos os planos incluem cancelamento sem multa e adesão em até 48h.</p>
+            </div>
+
+            <div class="plans-grid">
+                <!-- ELITE -->
+                <div class="plan-card plan-elite reveal">
+                    <div class="plan-name">Elite</div>
+                    <div class="plan-desc">Saúde + lazer. O cartão completo.</div>
+                    <div class="plan-price">
+                        <span class="amount">R$139,90</span>
+                        <span class="period">/mês por beneficiário</span>
+                    </div>
+                    <div class="plan-divider"></div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check" class="feat-icon check"></i> Tudo do Master</li>
+                        <li><i data-lucide="check" class="feat-icon check"></i> Acesso a clubes e parques parceiros</li>
+                        <li><i data-lucide="check" class="feat-icon check"></i> Titular + 02 acompanhantes pro lazer</li>
+                        <li><i data-lucide="check" class="feat-icon check"></i> Sem coparticipação</li>
+                    </ul>
+                    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20tenho%20interesse%20no%20plano%20Elite.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-outline-purple btn-full" target="_blank" rel="noopener">
+                        Quero o Elite
+                    </a>
+                    <div class="plan-tagline">Saúde com lazer pra família toda.</div>
+                </div>
+
+                <!-- MASTER -->
+                <div class="plan-card plan-master reveal" style="--stagger: 1;">
+                    <span class="plan-badge">MAIS POPULAR</span>
+                    <div class="plan-name">Master</div>
+                    <div class="plan-desc">Exames e especialistas presenciais.</div>
+                    <div class="plan-price">
+                        <span class="amount">R$59,90</span>
+                        <span class="period">/mês por beneficiário</span>
+                    </div>
+                    <div class="plan-divider"></div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check" class="feat-icon check"></i> Tudo do Essencial</li>
+                        <li><i data-lucide="check" class="feat-icon check"></i> Rede credenciada presencial</li>
+                        <li><i data-lucide="check" class="feat-icon check"></i> 20% a 70% de desconto em exames + consultas</li>
+                        <li><i data-lucide="check" class="feat-icon check"></i> Sem coparticipação</li>
+                        <li class="disabled"><i data-lucide="x" class="feat-icon x"></i> Lazer</li>
+                    </ul>
+                    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20tenho%20interesse%20no%20plano%20Master.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-full" target="_blank" rel="noopener">
+                        Quero o Master
+                    </a>
+                    <div class="plan-tagline">Só R$30 a mais que o Essencial.</div>
+                </div>
+
+                <!-- ESSENCIAL -->
+                <div class="plan-card reveal" style="--stagger: 2;">
+                    <div class="plan-name">Essencial</div>
+                    <div class="plan-desc">Pra quem quer o básico.</div>
+                    <div class="plan-price">
+                        <span class="amount">R$29,90</span>
+                        <span class="period">/mês por beneficiário</span>
+                    </div>
+                    <div class="plan-divider"></div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check" class="feat-icon check"></i> Clínico geral 24h</li>
+                        <li><i data-lucide="check" class="feat-icon check"></i> 21 especialidades por agendamento</li>
+                        <li><i data-lucide="check" class="feat-icon check"></i> Receita e atestado digitais*</li>
+                        <li><i data-lucide="check" class="feat-icon check"></i> Sem coparticipação</li>
+                        <li class="disabled"><i data-lucide="x" class="feat-icon x"></i> Rede credenciada presencial</li>
+                        <li class="disabled"><i data-lucide="x" class="feat-icon x"></i> Lazer</li>
+                    </ul>
+                    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20tenho%20interesse%20no%20plano%20Essencial.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-secondary btn-full" target="_blank" rel="noopener">
+                        Quero o Essencial
+                    </a>
+                    <div class="plan-tagline">Menos de R$1 por dia.</div>
+                </div>
+            </div>
+
+            <div class="plans-strip reveal">
+                ✓ Adesão em até 48h  ·  ✓ Pix, cartão ou boleto  ·  ✓ Cancelamento sem multa*
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         11.5 | PARA EMPRESAS (B2B dedicado)
+         ============================================ -->
+    <section class="b2b-section" id="empresas">
+        <div class="orb orb-purple" style="width: 500px; height: 500px; bottom: -120px; left: -120px; opacity: 0.15;"></div>
+
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow reveal">PARA EMPRESAS</span>
+                <h2 class="reveal" style="--stagger: 1;">Cuide da sua equipe sem pesar no orçamento.</h2>
+                <p class="lead reveal" style="--stagger: 2;">Ofereça um benefício de saúde de verdade pros seus colaboradores. Mensalidade acessível, atendimento imediato e zero burocracia. De pequenas equipes a grandes empresas.</p>
+            </div>
+
+            <div class="b2b-benefits-grid">
+                <div class="b2b-benefit reveal">
+                    <div class="icon-wrap icon-purple"><i data-lucide="piggy-bank" class="icon"></i></div>
+                    <h3>Custo acessível</h3>
+                    <p>A partir de R$ 59,90 por funcionário ao mês. Menos que uma consulta particular.</p>
+                </div>
+                <div class="b2b-benefit reveal" style="--stagger: 1;">
+                    <div class="icon-wrap icon-purple"><i data-lucide="trending-down" class="icon"></i></div>
+                    <h3>Reduz absenteísmo</h3>
+                    <p>Atendimento imediato evita afastamentos longos e visitas desnecessárias a hospital.</p>
+                </div>
+                <div class="b2b-benefit reveal" style="--stagger: 2;">
+                    <div class="icon-wrap icon-purple"><i data-lucide="award" class="icon"></i></div>
+                    <h3>Atrai e retém talentos</h3>
+                    <p>Benefício de saúde valorizado por candidatos e pela equipe que já está com você.</p>
+                </div>
+                <div class="b2b-benefit reveal" style="--stagger: 3;">
+                    <div class="icon-wrap icon-purple"><i data-lucide="zap" class="icon"></i></div>
+                    <h3>Implementação rápida</h3>
+                    <p>Equipe ativa em poucos dias, com suporte dedicado pra área de RH.</p>
+                </div>
+            </div>
+
+            <div class="b2b-showcase reveal">
+                <div class="b2b-showcase-photo">
+                    <img src="para-empresas.png" alt="Equipe corporativa diversa engajada com o benefício do Cartão Capital" loading="lazy">
+                </div>
+                <div class="b2b-pricing-block">
+                    <div class="b2b-pricing-info">
+                        <span class="b2b-label">A PARTIR DE</span>
+                        <div class="b2b-amount-row">
+                            <span class="amount">R$ 59,90</span>
+                            <span class="period">/funcionário/mês</span>
+                        </div>
+                        <ul class="b2b-pricing-features">
+                            <li>Telemedicina 24h pra todos os colaboradores</li>
+                            <li>Rede credenciada presencial</li>
+                            <li>Carteirinha digital na plataforma</li>
+                            <li>Sem coparticipação por consulta.</li>
+                        </ul>
+                    </div>
+                    <div class="b2b-pricing-cta">
+                        <h3>Pronto pra implementar?</h3>
+                        <p>Fale com nosso especialista B2B e receba uma proposta personalizada pro tamanho da sua empresa.</p>
+                        <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Represento%20uma%20empresa%20e%20gostaria%20de%20uma%20proposta%20do%20Cart%C3%A3o%20Capital%20para%20a%20nossa%20equipe.%20Podemos%20conversar%3F" class="btn btn-large" target="_blank" rel="noopener">
+                            <svg class="icon-wa" aria-hidden="true" style="width:22px;height:22px;"><use href="#icon-whatsapp"/></svg>
+                            Solicitar proposta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         12 | DEPOIMENTOS
+         ============================================ -->
+    <section>
+        <div class="orb orb-purple" style="width: 500px; height: 500px; top: 0; right: -150px; opacity: 0.2;"></div>
+
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow reveal">QUEM USA, SABE</span>
+                <h2 class="reveal" style="--stagger: 1;">Histórias reais de quem já tem o Cartão Capital.</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <p class="testimonial-text">Minha mãe ficou 7 horas no hospital pra trocar um remédio. Na telemedicina, em 45 minutos o cardiologista resolveu. Eu chorei de alívio.</p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">M</div>
+                        <div class="testimonial-meta">
+                            <span class="testimonial-name">Maria S.</span>
+                            <span class="testimonial-info">Brasília-DF · Plano Master</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal" style="--stagger: 1;">
+                    <p class="testimonial-text">Meu filho acordou com febre às 2h. Em 15 minutos o pediatra já tava orientando. Receita digital na hora. Não saí de casa.</p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--purple-light), var(--purple-primary));">J</div>
+                        <div class="testimonial-meta">
+                            <span class="testimonial-name">João P.</span>
+                            <span class="testimonial-info">Brasília-DF · Plano Master</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         13 | PARCEIROS
+         ============================================ -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow reveal">QUEM ESTÁ COM A GENTE</span>
+                <h2 class="reveal" style="--stagger: 1;">Empresas e profissionais que confiam no Cartão Capital.</h2>
+            </div>
+        </div>
+
+        <div class="marquee">
+            <div class="marquee-track">
+                <span class="marquee-pill">
+                    <span class="marquee-logo" title="Substituir por logo da empresa"><i data-lucide="image" class="icon"></i></span>
+                    Medicar Soluções em Saúde
+                </span>
+                <span class="marquee-pill">
+                    <span class="marquee-logo" title="Substituir por logo da empresa"><i data-lucide="image" class="icon"></i></span>
+                    Clubes &amp; Parques
+                </span>
+                <span class="marquee-pill">
+                    <span class="marquee-logo" title="Substituir por logo da empresa"><i data-lucide="image" class="icon"></i></span>
+                    Larissa | Record TV
+                </span>
+                <span class="marquee-pill">
+                    <span class="marquee-logo" title="Substituir por logo da empresa"><i data-lucide="image" class="icon"></i></span>
+                    Sindicatos Parceiros
+                </span>
+                <span class="marquee-pill">
+                    <span class="marquee-logo" title="Substituir por logo da empresa"><i data-lucide="image" class="icon"></i></span>
+                    Reclame Aqui
+                </span>
+                <!-- duplicado para o loop infinito (3 sets, animation -33.33%) -->
+                <span class="marquee-pill" aria-hidden="true">
+                    <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
+                    Medicar Soluções em Saúde
+                </span>
+                <span class="marquee-pill" aria-hidden="true">
+                    <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
+                    Clubes &amp; Parques
+                </span>
+                <span class="marquee-pill" aria-hidden="true">
+                    <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
+                    Larissa | Record TV
+                </span>
+                <span class="marquee-pill" aria-hidden="true">
+                    <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
+                    Sindicatos Parceiros
+                </span>
+                <span class="marquee-pill" aria-hidden="true">
+                    <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
+                    Reclame Aqui
+                </span>
+                <span class="marquee-pill" aria-hidden="true">
+                    <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
+                    Medicar Soluções em Saúde
+                </span>
+                <span class="marquee-pill" aria-hidden="true">
+                    <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
+                    Clubes &amp; Parques
+                </span>
+                <span class="marquee-pill" aria-hidden="true">
+                    <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
+                    Larissa | Record TV
+                </span>
+                <span class="marquee-pill" aria-hidden="true">
+                    <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
+                    Sindicatos Parceiros
+                </span>
+                <span class="marquee-pill" aria-hidden="true">
+                    <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
+                    Reclame Aqui
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         14 | FAQ
+         ============================================ -->
+    <section class="faq" id="faq">
+        <div class="orb orb-purple" style="width: 500px; height: 500px; top: 20%; left: -150px; opacity: 0.18;"></div>
+
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow reveal">PERGUNTAS FREQUENTES</span>
+                <h2 class="reveal" style="--stagger: 1;">Tudo que você precisa saber antes de decidir.</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <button class="faq-header" type="button">
+                        <span class="faq-question">O que é coparticipação?</span>
+                        <span class="faq-toggle"><i data-lucide="plus" class="icon"></i></span>
+                    </button>
+                    <div class="faq-body"><p>Taxa que outros cobram por consulta (R$30 a R$50). Aqui não existe. Pagou a mensalidade, usa quantas vezes quiser.</p></div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-header" type="button">
+                        <span class="faq-question">Telemedicina funciona de verdade?</span>
+                        <span class="faq-toggle"><i data-lucide="plus" class="icon"></i></span>
+                    </button>
+                    <div class="faq-body"><p>Clínico geral 24h resolve febre, gripe, receitas e orientações na hora. Especialidades como psicologia, nutrição e cardiologia funcionam por agendamento. Quando precisa de exame físico, o médico orienta ir presencialmente.</p></div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-header" type="button">
+                        <span class="faq-question">Quanto tempo pra começar a usar?</span>
+                        <span class="faq-toggle"><i data-lucide="plus" class="icon"></i></span>
+                    </button>
+                    <div class="faq-body"><p>Em até 48 horas após o pagamento. Você recebe a plataforma, carteirinha digital e instruções pelo WhatsApp.</p></div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-header" type="button">
+                        <span class="faq-question">Posso incluir minha família?</span>
+                        <span class="faq-toggle"><i data-lucide="plus" class="icon"></i></span>
+                    </button>
+                    <div class="faq-body"><p>Sim. Todos os planos permitem dependentes. Mesmo valor por beneficiário.</p></div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-header" type="button">
+                        <span class="faq-question">Posso cancelar quando quiser?</span>
+                        <span class="faq-toggle"><i data-lucide="plus" class="icon"></i></span>
+                    </button>
+                    <div class="faq-body"><p>Sim. Pela plataforma, site ou WhatsApp. Sem multa*.</p></div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-header" type="button">
+                        <span class="faq-question">Já tenho plano. Faz sentido?</span>
+                        <span class="faq-toggle"><i data-lucide="plus" class="icon"></i></span>
+                    </button>
+                    <div class="faq-body"><p>Faz. Funciona como complemento. 2h da manhã com alguém passando mal? Clínico geral em minutos, sem sair de casa. E as demais especialidades por agendamento rápido.</p></div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-header" type="button">
+                        <span class="faq-question">Atendem no Brasil inteiro?</span>
+                        <span class="faq-toggle"><i data-lucide="plus" class="icon"></i></span>
+                    </button>
+                    <div class="faq-body"><p>Telemedicina: sim, qualquer lugar com internet. Rede presencial em expansão, foco inicial em Brasília-DF.</p></div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-header" type="button">
+                        <span class="faq-question">Quais especialidades?</span>
+                        <span class="faq-toggle"><i data-lucide="plus" class="icon"></i></span>
+                    </button>
+                    <div class="faq-body"><p>21 no total. Clínico geral disponível 24h. As demais (pediatria, geriatria, cardiologia, ginecologia, psicologia, psiquiatria, nutrição, neurologia, endocrinologia e mais) funcionam por agendamento.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         15 | CTA FINAL DUPLO
+         ============================================ -->
+    <section class="alt-bg">
+        <div class="container">
+            <div class="final-cta-block reveal">
+                <h2>
+                    Saúde não espera.
+                    <span class="gold-line">Seu acesso também não precisa esperar.</span>
+                </h2>
+                <p>Em até 48h você tem clínico geral 24h e 21 especialidades por agendamento. Sem taxa por consulta.</p>
+                <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-large" target="_blank" rel="noopener">
+                    <svg class="icon-wa" aria-hidden="true" style="width:22px;height:22px;"><use href="#icon-whatsapp"/></svg>
+                    Contratar plano
+                </a>
+                <div class="micro">A partir de R$29,90/mês  ·  Adesão em até 48h  ·  Cancele quando quiser*</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         16 | RODAPÉ
+         ============================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo footer-logo">
+                        <img src="logo-capital-dark.svg" alt="Cartão Capital">
+                    </div>
+                    <p>Cartão de benefícios de saúde e lazer. Telemedicina operada por Medicar Soluções em Saúde.</p>
+                    <div class="address">Brasília, DF</div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#planos">Planos</a></li>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" rel="noopener">WhatsApp: +55 61 9372-4623</a></li>
+                        <li><a href="mailto:suporte.cartaocapital@gmail.com">suporte.cartaocapital@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="termos-uso.pdf" target="_blank" rel="noopener">Termos de Uso</a></li>
+                        <li><a href="politica-privacidade.pdf" target="_blank" rel="noopener">Política de Privacidade</a></li>
+                        <li><a href="#">CNPJ: 58.890.642/0001-93</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 Cartão Capital Ltda. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         BOTÃO FLUTUANTE WHATSAPP
+         ============================================ -->
+    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contratar plano via WhatsApp">
+        <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+    </a>
+
+    <!-- ============================================
+         LUCIDE ICONS
+         ============================================ -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        /* Renderiza ícones Lucide */
+        lucide.createIcons();
+
+        /* Nav: border ao scrollar + menu mobile */
+        const nav = document.getElementById('nav');
+        const navToggle = document.getElementById('navToggle');
+        const navMobile = document.getElementById('navMobile');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        navToggle.addEventListener('click', () => {
+            navMobile.classList.toggle('active');
+        });
+
+        navMobile.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMobile.classList.remove('active');
+            });
+        });
+
+        /* Intersection Observer pro fade-in */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+
+                    /* Anima contadores na barra de prova (só os com data-target) */
+                    if (entry.target.classList.contains('stat-item')) {
+                        const numEl = entry.target.querySelector('.stat-number');
+                        if (numEl && !numEl.dataset.animated && numEl.dataset.target) {
+                            animateCounter(numEl);
+                            numEl.dataset.animated = 'true';
+                        }
+                    }
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        /* Count-up animation */
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.target, 10);
+            const prefix = el.dataset.prefix || '';
+            const suffix = el.dataset.suffix || '';
+            const duration = 1500;
+            const start = performance.now();
+
+            function tick(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(target * eased);
+                el.textContent = prefix + current + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        /* FAQ accordion */
+        document.querySelectorAll('.faq-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+    <!-- ============================================
+         MODAL PARQUES AQUÁTICOS
+         ============================================ -->
+    <div class="modal-overlay" id="modalParques" role="dialog" aria-modal="true" aria-label="Parques credenciados" onclick="fecharModalParques(event)">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>🌴 Parques credenciados</h3>
+                <button class="modal-close" onclick="fecharModalParquesBtn()" aria-label="Fechar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+
+            <div class="carousel-wrap">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide"><img src="parque-1.jpeg" alt="Parque aquático credenciado 1" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="parque-2.jpeg" alt="Parque aquático credenciado 2" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="parque-3.jpeg" alt="Parque aquático credenciado 3" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="parque-4.jpeg" alt="Parque aquático credenciado 4" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="parque-5.jpeg" alt="Parque aquático credenciado 5" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="parque-6.jpeg" alt="Parque aquático credenciado 6" loading="lazy"></div>
+                </div>
+                <button class="carousel-btn prev" onclick="moverCarrossel(-1)" aria-label="Anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button class="carousel-btn next" onclick="moverCarrossel(1)" aria-label="Próxima">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="carousel-counter" id="carouselCounter">1 / 6</div>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots">
+                <button class="carousel-dot active" onclick="irParaSlide(0)" aria-label="Slide 1"></button>
+                <button class="carousel-dot" onclick="irParaSlide(1)" aria-label="Slide 2"></button>
+                <button class="carousel-dot" onclick="irParaSlide(2)" aria-label="Slide 3"></button>
+                <button class="carousel-dot" onclick="irParaSlide(3)" aria-label="Slide 4"></button>
+                <button class="carousel-dot" onclick="irParaSlide(4)" aria-label="Slide 5"></button>
+                <button class="carousel-dot" onclick="irParaSlide(5)" aria-label="Slide 6"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ---- Modal Parques ---- */
+        const TOTAL_SLIDES = 6;
+        let slideAtual = 0;
+        let touchStartX = 0;
+
+        function abrirModalParques() {
+            slideAtual = 0;
+            atualizarCarrossel();
+            document.getElementById('modalParques').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharModalParquesBtn() {
+            document.getElementById('modalParques').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function fecharModalParques(e) {
+            if (e.target === document.getElementById('modalParques')) fecharModalParquesBtn();
+        }
+
+        function moverCarrossel(dir) {
+            slideAtual = (slideAtual + dir + TOTAL_SLIDES) % TOTAL_SLIDES;
+            atualizarCarrossel();
+        }
+
+        function irParaSlide(i) {
+            slideAtual = i;
+            atualizarCarrossel();
+        }
+
+        function atualizarCarrossel() {
+            document.getElementById('carouselTrack').style.transform = `translateX(-${slideAtual * 100}%)`;
+            document.getElementById('carouselCounter').textContent = `${slideAtual + 1} / ${TOTAL_SLIDES}`;
+            document.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === slideAtual));
+        }
+
+        /* Teclado */
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('modalParques');
+            if (!modal.classList.contains('open')) return;
+            if (e.key === 'Escape') fecharModalParquesBtn();
+            if (e.key === 'ArrowLeft') moverCarrossel(-1);
+            if (e.key === 'ArrowRight') moverCarrossel(1);
+        });
+
+        /* Swipe mobile */
+        document.getElementById('modalParques').addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        document.getElementById('modalParques').addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) moverCarrossel(diff > 0 ? 1 : -1);
+        }, { passive: true });
+    </script>
+</body>
+</html>
