@@ -456,10 +456,33 @@
         .nav-cta .icon-wa { width: 16px; height: 16px; }
         .whatsapp-float .icon-wa { width: 28px; height: 28px; }
 
+        /* Botão Login — ghost style */
+        .nav-login {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--purple-primary);
+            border: 1.5px solid var(--purple-primary);
+            padding: 9px 18px;
+            border-radius: 100px;
+            transition: all 0.22s var(--ease-standard);
+            white-space: nowrap;
+            background: transparent;
+        }
+        .nav-login:hover {
+            background: var(--purple-soft);
+            transform: translateY(-1px);
+        }
+        .nav-login .icon { width: 15px; height: 15px; }
+
         @media (max-width: 900px) {
             .nav-links { display: none; }
             .nav-toggle { display: inline-flex; }
             .nav-cta { display: none; }
+            .nav-login { display: none; }
             .nav-mobile {
                 position: fixed;
                 top: 72px;
@@ -478,7 +501,7 @@
             }
             .nav-mobile.active { display: flex; }
             .nav-mobile a { color: var(--text-primary); font-size: 15px; font-weight: 500; }
-            .nav-mobile .nav-cta { display: inline-flex; align-self: flex-start; }
+            .nav-mobile .nav-cta { display: inline-flex; align-self: flex-start; color: #fff; }
         }
 
         /* ============================================
@@ -3398,10 +3421,16 @@
                 <li><a href="#faq">FAQ</a></li>
             </ul>
 
-            <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="nav-cta" target="_blank" rel="noopener">
-                <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-                Contratar plano
-            </a>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <a href="https://portal.cartaocapital.com.br/login" class="nav-login" target="_blank" rel="noopener">
+                    <i data-lucide="log-in" class="icon"></i>
+                    Entrar
+                </a>
+                <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="nav-cta" target="_blank" rel="noopener">
+                    <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+                    Contratar plano
+                </a>
+            </div>
 
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
                 <i data-lucide="menu" class="icon"></i>
@@ -3413,6 +3442,10 @@
             <a href="#como-funciona">Como Funciona</a>
             <a href="#empresas">Empresas</a>
             <a href="#faq">FAQ</a>
+            <a href="https://portal.cartaocapital.com.br/login" class="nav-login" target="_blank" rel="noopener" style="display:inline-flex;">
+                <i data-lucide="log-in" class="icon"></i>
+                Entrar na plataforma
+            </a>
             <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="nav-cta" target="_blank" rel="noopener">
                 <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
                 Contratar plano
