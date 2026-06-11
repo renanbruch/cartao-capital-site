@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cartão Capital. Telemedicina 24h, 21 especialidades por agendamento, sem coparticipação. A partir de R$29,90/mês. Operado por Medicar.">
+    <meta name="description" content="Cartão Capital. Telemedicina 24h, 21 especialidades por agendamento, sem coparticipação. A partir de R$29,90/mês.">
     <meta name="theme-color" content="#6C009D">
 
     <meta property="og:type" content="website">
@@ -1351,18 +1351,91 @@
             text-align: center;
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 660px) {
+            /* Tabela → cards empilhados */
             .compare-table {
-                overflow-x: auto;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                border-radius: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                overflow: visible;
             }
-            .compare-row {
-                grid-template-columns: 1.6fr 1.2fr 1.2fr;
-                min-width: 580px;
+
+            /* Header: só as duas colunas Capital | Concorrência */
+            .compare-row.header {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                background: var(--bg-card);
+                border: 1px solid var(--border-soft);
+                border-radius: 14px;
+                overflow: hidden;
+                min-width: unset;
+                position: sticky;
+                top: 72px;
+                z-index: 10;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             }
-            .compare-row > * {
+            .compare-row.header .col-feature { display: none; }
+            .compare-row.header .col-capital {
+                border-radius: 14px 0 0 14px;
+                text-align: center;
+                padding: 16px 12px;
+                font-size: 14px;
+            }
+            .compare-row.header .col-other {
+                border-radius: 0 14px 14px 0;
+                text-align: center;
                 padding: 16px 12px;
                 font-size: 13px;
             }
+
+            /* Linhas de dados → card com recurso no topo + valores lado a lado */
+            .compare-row:not(.header) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                    "feature feature"
+                    "capital other";
+                background: var(--bg-card);
+                border: 1px solid var(--border-soft);
+                border-radius: 14px;
+                overflow: hidden;
+                min-width: unset;
+            }
+            .compare-row:not(.header) .col-feature {
+                grid-area: feature;
+                padding: 12px 16px 10px;
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--text-primary);
+                border-bottom: 1px solid var(--border-soft);
+                background: var(--bg-secondary);
+                border-radius: 0;
+            }
+            .compare-row:not(.header) .col-capital {
+                grid-area: capital;
+                padding: 14px 10px;
+                border-right: 1px solid var(--border-soft);
+                text-align: center;
+                font-size: 13px;
+                border-bottom: none;
+                background: rgba(108,0,157,0.04);
+            }
+            .compare-row:not(.header) .col-other {
+                grid-area: other;
+                padding: 14px 10px;
+                text-align: center;
+                font-size: 13px;
+                border-bottom: none;
+                color: var(--text-secondary);
+            }
+            /* Anula alternância de cor nas linhas pares no mobile */
+            .compare-row:not(.header):nth-child(even) .col-feature { background: var(--bg-secondary); }
+            .compare-row:not(.header):nth-child(even) .col-other { background: unset; }
         }
 
         /* ============================================
@@ -1420,9 +1493,58 @@
             margin: 0;
         }
 
+        /* Card CTA — rede credenciada */
+        .specialty-card-cta {
+            background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-deep) 100%);
+            border: none;
+            border-radius: 14px;
+            padding: 22px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-standard);
+            box-shadow: 0 4px 16px rgba(108,0,157,0.28);
+        }
+        .specialty-card-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(108,0,157,0.38);
+        }
+        .specialty-card-cta .cta-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .specialty-card-cta .cta-icon svg {
+            width: 20px;
+            height: 20px;
+            color: #fff;
+        }
+        .specialty-card-cta h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 2px;
+            line-height: 1.3;
+        }
+        .specialty-card-cta p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.75);
+            margin: 0;
+            line-height: 1.4;
+        }
+
         @media (max-width: 480px) {
             .specialties-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .specialty-card { padding: 18px 16px; gap: 12px; }
+            .specialty-card-cta { padding: 18px 16px; }
         }
 
         /* ============================================
@@ -3426,7 +3548,7 @@
                     <i data-lucide="log-in" class="icon"></i>
                     Entrar
                 </a>
-                <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="nav-cta" target="_blank" rel="noopener">
+                <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="nav-cta" target="_blank" rel="noopener">
                     <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
                     Contratar plano
                 </a>
@@ -3446,7 +3568,7 @@
                 <i data-lucide="log-in" class="icon"></i>
                 Entrar na plataforma
             </a>
-            <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="nav-cta" target="_blank" rel="noopener">
+            <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="nav-cta" target="_blank" rel="noopener">
                 <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
                 Contratar plano
             </a>
@@ -3472,13 +3594,13 @@
                         Pague a mensalidade e tenha clínico geral 24h + 21 especialidades por agendamento. Quantas vezes precisar, sem taxa extra. De qualquer lugar do Brasil.
                     </p>
                     <div class="hero-ctas reveal" style="--stagger: 3;">
-                        <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary" target="_blank" rel="noopener">
+                        <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary" target="_blank" rel="noopener">
                             <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
                             Contratar plano
                         </a>
                     </div>
                     <div class="trust-badge reveal" style="--stagger: 4;">
-                        <span><i data-lucide="check" style="width: 14px; height: 14px; color: var(--purple-primary);"></i> Operado por Medicar</span>
+                        <span><i data-lucide="check" style="width: 14px; height: 14px; color: var(--purple-primary);"></i> Sem coparticipação</span>
                         <span><i data-lucide="check" style="width: 14px; height: 14px; color: var(--purple-primary);"></i> Adesão em até 48h</span>
                         <span><i data-lucide="check" style="width: 14px; height: 14px; color: var(--purple-primary);"></i> Cancele quando quiser*</span>
                     </div>
@@ -3547,7 +3669,7 @@
                     <span class="eyebrow reveal">CONHEÇA O CARTÃO CAPITAL</span>
                     <h2 class="reveal" style="--stagger: 1;">Mais que um cartão. Um sistema de saúde acessível.</h2>
                     <p class="reveal lead" style="--stagger: 2;">O Cartão Capital nasceu pra resolver um problema simples: dar acesso a médicos de qualidade sem fila do SUS, sem mensalidade impagável de plano de saúde e sem coparticipação por consulta.</p>
-                    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary reveal" style="--stagger: 3;" target="_blank" rel="noopener">
+                    <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary reveal" style="--stagger: 3;" target="_blank" rel="noopener">
                         <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
                         Contratar plano
                     </a>
@@ -3562,10 +3684,10 @@
                         </div>
                     </div>
                     <div class="feature-block reveal" style="--stagger: 1;">
-                        <div class="icon-wrap icon-purple"><i data-lucide="hospital" class="icon"></i></div>
+                        <div class="icon-wrap icon-purple"><i data-lucide="stethoscope" class="icon"></i></div>
                         <div class="feature-block-text">
                             <h3>Saúde presencial</h3>
-                            <p>Rede credenciada de hospitais, clínicas e laboratórios com desconto de 20% a 70%.</p>
+                            <p>Rede credenciada de clínicas especializadas com desconto em exames de 20% a 70%. <a href="rede-credenciada.pdf" target="_blank" rel="noopener" style="color:var(--purple-primary);font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;">Ver rede credenciada →</a></p>
                         </div>
                     </div>
                     <div class="feature-block reveal" style="--stagger: 2;">
@@ -3644,7 +3766,7 @@
             </div>
 
             <div class="compare-cta reveal">
-                <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary" target="_blank" rel="noopener">
+                <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary" target="_blank" rel="noopener">
                     <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
                     Contratar plano sem coparticipação
                 </a>
@@ -3880,6 +4002,14 @@
                         <p>Rinite, alergias e dermatites</p>
                     </div>
                 </article>
+
+                <a href="rede-credenciada.pdf" target="_blank" rel="noopener" class="specialty-card-cta">
+                    <div class="cta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3>Rede credenciada</h3>
+                    <p>Ver clínicas e parceiros →</p>
+                </a>
             </div>
 
         </div>
@@ -3976,7 +4106,7 @@
                         </li>
                     </ul>
 
-                    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary reveal" style="--stagger: 3;" target="_blank" rel="noopener">
+                    <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary reveal" style="--stagger: 3;" target="_blank" rel="noopener">
                         <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
                         Contratar plano
                     </a>
@@ -4095,7 +4225,7 @@
                         <li><i data-lucide="check" class="feat-icon check"></i> Titular + 02 acompanhantes pro lazer</li>
                         <li><i data-lucide="check" class="feat-icon check"></i> Sem coparticipação</li>
                     </ul>
-                    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20tenho%20interesse%20no%20plano%20Elite.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-outline-purple btn-full" target="_blank" rel="noopener">
+                    <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20tenho%20interesse%20no%20plano%20Elite.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-outline-purple btn-full" target="_blank" rel="noopener">
                         Quero o Elite
                     </a>
                     <div class="plan-tagline">Saúde com lazer pra família toda.</div>
@@ -4118,7 +4248,7 @@
                         <li><i data-lucide="check" class="feat-icon check"></i> Sem coparticipação</li>
                         <li class="disabled"><i data-lucide="x" class="feat-icon x"></i> Lazer</li>
                     </ul>
-                    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20tenho%20interesse%20no%20plano%20Master.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-full" target="_blank" rel="noopener">
+                    <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20tenho%20interesse%20no%20plano%20Master.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-full" target="_blank" rel="noopener">
                         Quero o Master
                     </a>
                     <div class="plan-tagline">Só R$30 a mais que o Essencial.</div>
@@ -4141,7 +4271,7 @@
                         <li class="disabled"><i data-lucide="x" class="feat-icon x"></i> Rede credenciada presencial</li>
                         <li class="disabled"><i data-lucide="x" class="feat-icon x"></i> Lazer</li>
                     </ul>
-                    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20tenho%20interesse%20no%20plano%20Essencial.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-secondary btn-full" target="_blank" rel="noopener">
+                    <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20tenho%20interesse%20no%20plano%20Essencial.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-secondary btn-full" target="_blank" rel="noopener">
                         Quero o Essencial
                     </a>
                     <div class="plan-tagline">Menos de R$1 por dia.</div>
@@ -4211,7 +4341,7 @@
                     <div class="b2b-pricing-cta">
                         <h3>Pronto pra implementar?</h3>
                         <p>Fale com nosso especialista B2B e receba uma proposta personalizada pro tamanho da sua empresa.</p>
-                        <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Represento%20uma%20empresa%20e%20gostaria%20de%20uma%20proposta%20do%20Cart%C3%A3o%20Capital%20para%20a%20nossa%20equipe.%20Podemos%20conversar%3F" class="btn btn-large" target="_blank" rel="noopener">
+                        <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Represento%20uma%20empresa%20e%20gostaria%20de%20uma%20proposta%20do%20Cart%C3%A3o%20Capital%20para%20a%20nossa%20equipe.%20Podemos%20conversar%3F" class="btn btn-large" target="_blank" rel="noopener">
                             <svg class="icon-wa" aria-hidden="true" style="width:22px;height:22px;"><use href="#icon-whatsapp"/></svg>
                             Solicitar proposta
                         </a>
@@ -4274,7 +4404,7 @@
             <div class="marquee-track">
                 <span class="marquee-pill">
                     <span class="marquee-logo" title="Substituir por logo da empresa"><i data-lucide="image" class="icon"></i></span>
-                    Medicar Soluções em Saúde
+                    Rede de Clínicas Parceiras
                 </span>
                 <span class="marquee-pill">
                     <span class="marquee-logo" title="Substituir por logo da empresa"><i data-lucide="image" class="icon"></i></span>
@@ -4295,7 +4425,7 @@
                 <!-- duplicado para o loop infinito (3 sets, animation -33.33%) -->
                 <span class="marquee-pill" aria-hidden="true">
                     <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
-                    Medicar Soluções em Saúde
+                    Rede de Clínicas Parceiras
                 </span>
                 <span class="marquee-pill" aria-hidden="true">
                     <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
@@ -4315,7 +4445,7 @@
                 </span>
                 <span class="marquee-pill" aria-hidden="true">
                     <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
-                    Medicar Soluções em Saúde
+                    Rede de Clínicas Parceiras
                 </span>
                 <span class="marquee-pill" aria-hidden="true">
                     <span class="marquee-logo"><i data-lucide="image" class="icon"></i></span>
@@ -4428,7 +4558,7 @@
                     <span class="gold-line">Seu acesso também não precisa esperar.</span>
                 </h2>
                 <p>Em até 48h você tem clínico geral 24h e 21 especialidades por agendamento. Sem taxa por consulta.</p>
-                <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-large" target="_blank" rel="noopener">
+                <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-large" target="_blank" rel="noopener">
                     <svg class="icon-wa" aria-hidden="true" style="width:22px;height:22px;"><use href="#icon-whatsapp"/></svg>
                     Contratar plano
                 </a>
@@ -4448,7 +4578,7 @@
                     <div class="nav-logo footer-logo">
                         <img src="logo-capital-dark.svg" alt="Cartão Capital">
                     </div>
-                    <p>Cartão de benefícios de saúde e lazer. Telemedicina operada por Medicar Soluções em Saúde.</p>
+                    <p>Cartão de benefícios de saúde e lazer com telemedicina 24h e rede credenciada no DF.</p>
                     <div class="address">Brasília, DF</div>
                 </div>
 
@@ -4465,7 +4595,7 @@
                 <div class="footer-col">
                     <h4>Contato</h4>
                     <ul>
-                        <li><a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" rel="noopener">WhatsApp: +55 61 9372-4623</a></li>
+                        <li><a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" rel="noopener">WhatsApp: +55 61 9208-8946</a></li>
                         <li><a href="mailto:suporte.cartaocapital@gmail.com">suporte.cartaocapital@gmail.com</a></li>
                     </ul>
                 </div>
@@ -4489,7 +4619,7 @@
     <!-- ============================================
          BOTÃO FLUTUANTE WHATSAPP
          ============================================ -->
-    <a href="https://wa.me/556193724623?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contratar plano via WhatsApp">
+    <a href="https://wa.me/5561920888946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contratar plano via WhatsApp">
         <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
     </a>
 
