@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cartão Capital. Telemedicina 24h, 21 especialidades por agendamento, sem coparticipação. A partir de R$29,90/mês.">
+    <meta name="description" content="Cartão Capital. Telemedicina 24h, 17 especialidades por agendamento, sem coparticipação. A partir de R$29,90/mês.">
     <meta name="theme-color" content="#6C009D">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cartão Capital | Telemedicina 24h sem coparticipação">
-    <meta property="og:description" content="Clínico geral 24h e 21 especialidades por agendamento. Sem taxa por consulta. A partir de R$29,90/mês.">
+    <meta property="og:description" content="Clínico geral 24h e 17 especialidades por agendamento. Sem taxa por consulta. A partir de R$29,90/mês.">
     <meta property="og:image" content="og-cartao-capital.png">
     <meta property="og:locale" content="pt_BR">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cartão Capital | Telemedicina 24h sem coparticipação">
-    <meta name="twitter:description" content="Clínico geral 24h e 21 especialidades por agendamento. Sem taxa por consulta.">
+    <meta name="twitter:description" content="Clínico geral 24h e 17 especialidades por agendamento. Sem taxa por consulta.">
 
     <title>Cartão Capital | Telemedicina 24h sem coparticipação</title>
 
@@ -1493,6 +1493,21 @@
             margin: 0;
         }
 
+        /* Badge "2 por mês" */
+        .limit-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--purple-primary);
+            background: rgba(108,0,157,0.1);
+            border: 1px solid rgba(108,0,157,0.2);
+            border-radius: 20px;
+            padding: 2px 7px;
+            vertical-align: middle;
+            margin-left: 5px;
+            white-space: nowrap;
+        }
+
         /* Card CTA — rede credenciada */
         .specialty-card-cta {
             background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-deep) 100%);
@@ -1508,6 +1523,7 @@
             text-decoration: none;
             transition: all 0.3s var(--ease-standard);
             box-shadow: 0 4px 16px rgba(108,0,157,0.28);
+            grid-column: 1 / -1;
         }
         .specialty-card-cta:hover {
             transform: translateY(-2px);
@@ -3591,7 +3607,7 @@
                         <span class="accent">que não cobra por consulta.</span>
                     </h1>
                     <p class="lead reveal" style="--stagger: 2;">
-                        Pague a mensalidade e tenha clínico geral 24h + 21 especialidades por agendamento. Quantas vezes precisar, sem taxa extra. De qualquer lugar do Brasil.
+                        Pague a mensalidade e tenha clínico geral 24h + 17 especialidades por agendamento. Quantas vezes precisar, sem taxa extra. De qualquer lugar do Brasil.
                     </p>
                     <div class="hero-ctas reveal" style="--stagger: 3;">
                         <a href="https://wa.me/556192088946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-primary" target="_blank" rel="noopener">
@@ -3619,7 +3635,7 @@
 
                     <div class="card-badge badge-mr">
                         <div class="badge-mini-icon"><i data-lucide="stethoscope" class="icon"></i></div>
-                        <span><strong>+ de 20</strong> especialidades</span>
+                        <span><strong>17</strong> especialidades</span>
                     </div>
 
                     <div class="card-badge badge-bl">
@@ -3642,7 +3658,7 @@
                     <div class="stat-label">Clínico geral disponível</div>
                 </div>
                 <div class="stat-item reveal" style="--stagger: 1;">
-                    <div class="stat-number" data-target="21" data-suffix="">0</div>
+                    <div class="stat-number" data-target="17" data-suffix="">0</div>
                     <div class="stat-label">Especialidades inclusas</div>
                 </div>
                 <div class="stat-item reveal" style="--stagger: 2;">
@@ -3794,7 +3810,7 @@
                 </div>
                 <div class="differential-card reveal" style="--stagger: 1;">
                     <div class="icon-wrap icon-purple"><i data-lucide="stethoscope" class="icon"></i></div>
-                    <h3>21 especialidades</h3>
+                    <h3>17 especialidades</h3>
                     <p>Clínico geral 24h. Pediatra, cardiologista, geriatra, psicólogo e mais 15 por agendamento.</p>
                 </div>
                 <div class="differential-card reveal" style="--stagger: 2;">
@@ -3804,7 +3820,7 @@
                 </div>
                 <div class="differential-card reveal">
                     <div class="icon-wrap icon-purple"><i data-lucide="brain" class="icon"></i></div>
-                    <h3>Psicologia e nutrição: 2x/mês</h3>
+                    <h3>Psicologia, Psiquiatria e Nutrição: 2x/mês</h3>
                     <p>O mercado dá 1 sessão. A gente dá 2: primeira consulta + retorno.</p>
                 </div>
                 <div class="differential-card reveal" style="--stagger: 1;">
@@ -3844,10 +3860,10 @@
                 </article>
 
                 <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="baby" class="icon"></i></div>
+                    <div class="icon-wrap icon-purple"><i data-lucide="activity" class="icon"></i></div>
                     <div class="specialty-text">
-                        <h3>Pediatria</h3>
-                        <p>Cuidado para crianças e adolescentes</p>
+                        <h3>Angiologia</h3>
+                        <p>Saúde vascular e circulação sanguínea</p>
                     </div>
                 </article>
 
@@ -3855,119 +3871,31 @@
                     <div class="icon-wrap icon-purple"><i data-lucide="heart-pulse" class="icon"></i></div>
                     <div class="specialty-text">
                         <h3>Cardiologia</h3>
-                        <p>Pressão, coração e prevenção cardiovascular</p>
+                        <p>Coração, pressão e saúde cardiovascular</p>
                     </div>
                 </article>
 
                 <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="users" class="icon"></i></div>
+                    <div class="icon-wrap icon-purple"><i data-lucide="clipboard-list" class="icon"></i></div>
                     <div class="specialty-text">
-                        <h3>Geriatria</h3>
-                        <p>Atendimento dedicado a idosos</p>
+                        <h3>Clínica Médica</h3>
+                        <p>Avaliação clínica e acompanhamento geral</p>
                     </div>
                 </article>
 
                 <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="flower-2" class="icon"></i></div>
+                    <div class="icon-wrap icon-purple"><i data-lucide="scan-face" class="icon"></i></div>
                     <div class="specialty-text">
-                        <h3>Ginecologia</h3>
-                        <p>Saúde íntima e check-ups femininos</p>
+                        <h3>Dermatologia</h3>
+                        <p>Pele, cabelo, unhas e doenças cutâneas</p>
                     </div>
                 </article>
 
                 <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="brain" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Psicologia</h3>
-                        <p>Apoio para ansiedade e bem-estar</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="pill" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Psiquiatria</h3>
-                        <p>Tratamento de transtornos mentais</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="salad" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Nutrição</h3>
-                        <p>Plano alimentar e reeducação</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="zap" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Neurologia</h3>
-                        <p>Enxaqueca, dores de cabeça e sistema nervoso</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="droplet" class="icon"></i></div>
+                    <div class="icon-wrap icon-purple"><i data-lucide="gauge" class="icon"></i></div>
                     <div class="specialty-text">
                         <h3>Endocrinologia</h3>
                         <p>Diabetes, tireoide e hormônios</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="sparkles" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Dermatologia</h3>
-                        <p>Pele, alergias e queda de cabelo</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="bone" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Ortopedia</h3>
-                        <p>Dores nas costas, lesões e articulações</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="eye" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Oftalmologia</h3>
-                        <p>Visão, dores oculares e óculos</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="ear" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Otorrinolaringologia</h3>
-                        <p>Ouvido, nariz e garganta</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="droplets" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Urologia</h3>
-                        <p>Saúde urológica e próstata</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="wind" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Pneumologia</h3>
-                        <p>Asma, bronquite e respiração</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="accessibility" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Reumatologia</h3>
-                        <p>Artrite, fibromialgia e dores articulares</p>
                     </div>
                 </article>
 
@@ -3980,26 +3908,90 @@
                 </article>
 
                 <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="users" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Geriatria</h3>
+                        <p>Saúde do idoso e longevidade</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="venus" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Ginecologia</h3>
+                        <p>Saúde feminina e prevenção</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="brain" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Neurologia</h3>
+                        <p>Cefaleia, epilepsia e sistema nervoso</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="salad" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Nutrição <span class="limit-badge">2 por mês</span></h3>
+                        <p>Alimentação saudável e controle de peso</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="eye" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Oftalmologia</h3>
+                        <p>Visão, olhos e prevenção ocular</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="bone" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Ortopedia</h3>
+                        <p>Ossos, articulações e lesões musculares</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="ear" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Otorrinolaringologia</h3>
+                        <p>Ouvido, nariz e garganta</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="baby" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Pediatria</h3>
+                        <p>Cuidado para crianças e adolescentes</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="icon-wrap icon-purple"><i data-lucide="pill" class="icon"></i></div>
+                    <div class="specialty-text">
+                        <h3>Psiquiatria <span class="limit-badge">2 por mês</span></h3>
+                        <p>Saúde mental e tratamento psiquiátrico</p>
+                    </div>
+                </article>
+
+                <article class="specialty-card">
                     <div class="icon-wrap icon-purple"><i data-lucide="heart-handshake" class="icon"></i></div>
                     <div class="specialty-text">
-                        <h3>Mastologia</h3>
-                        <p>Saúde das mamas e prevenção</p>
+                        <h3>Psicologia <span class="limit-badge">2 por mês</span></h3>
+                        <p>Bem-estar emocional e saúde mental</p>
                     </div>
                 </article>
 
                 <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="shield-alert" class="icon"></i></div>
+                    <div class="icon-wrap icon-purple"><i data-lucide="droplets" class="icon"></i></div>
                     <div class="specialty-text">
-                        <h3>Infectologia</h3>
-                        <p>IST e infecções recorrentes</p>
-                    </div>
-                </article>
-
-                <article class="specialty-card">
-                    <div class="icon-wrap icon-purple"><i data-lucide="leaf" class="icon"></i></div>
-                    <div class="specialty-text">
-                        <h3>Alergologia</h3>
-                        <p>Rinite, alergias e dermatites</p>
+                        <h3>Urologia</h3>
+                        <p>Saúde urológica e próstata</p>
                     </div>
                 </article>
 
@@ -4265,7 +4257,7 @@
                     <div class="plan-divider"></div>
                     <ul class="plan-features">
                         <li><i data-lucide="check" class="feat-icon check"></i> Clínico geral 24h</li>
-                        <li><i data-lucide="check" class="feat-icon check"></i> 21 especialidades por agendamento</li>
+                        <li><i data-lucide="check" class="feat-icon check"></i> 17 especialidades por agendamento</li>
                         <li><i data-lucide="check" class="feat-icon check"></i> Receita e atestado digitais*</li>
                         <li><i data-lucide="check" class="feat-icon check"></i> Sem coparticipação</li>
                         <li class="disabled"><i data-lucide="x" class="feat-icon x"></i> Rede credenciada presencial</li>
@@ -4557,7 +4549,7 @@
                     Saúde não espera.
                     <span class="gold-line">Seu acesso também não precisa esperar.</span>
                 </h2>
-                <p>Em até 48h você tem clínico geral 24h e 21 especialidades por agendamento. Sem taxa por consulta.</p>
+                <p>Em até 48h você tem clínico geral 24h e 17 especialidades por agendamento. Sem taxa por consulta.</p>
                 <a href="https://wa.me/556192088946?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20Cart%C3%A3o%20Capital%20e%20gostaria%20de%20contratar%20meu%20plano.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-large" target="_blank" rel="noopener">
                     <svg class="icon-wa" aria-hidden="true" style="width:22px;height:22px;"><use href="#icon-whatsapp"/></svg>
                     Contratar plano
